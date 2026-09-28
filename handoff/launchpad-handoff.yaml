@@ -71,8 +71,8 @@ proposed_launchpad_intake:
     shared_blueprint: red-hat-intel-agentic-v1
     solution_family: agentic_ai
   sources:
-    showroom: {repo_url: https://github.com/jkershawrh/agentic-ai-601, revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, playbook: site.yml, start_path: showroom}
-    workload: {repo_url: https://github.com/jkershawrh/agentic-ai-601, revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, deploy_path: charts/agentic-ai-601}
+    showroom: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, playbook: site.yml, start_path: showroom}
+    workload: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, deploy_path: charts/agentic-ai-601}
   runtime:
     deployment_type: helm
     deployment_class: shared_namespace
