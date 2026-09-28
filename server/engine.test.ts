@@ -15,10 +15,13 @@ describe('earned-authority ladder', () => {
   it.each([
     ['observe', 'observe'],
     ['recommend', 'recommend'],
+    ['shadow', 'shadow'],
     ['human_approval', 'request_approval'],
     ['bounded_action', 'request_approval'],
   ] as const)('%s remains bounded without approval', (stage, disposition) => {
-    expect(new EarnedAuthorityEngine().run(request('restart_required', stage)).decision.disposition).toBe(disposition)
+    const result = new EarnedAuthorityEngine().run(request('restart_required', stage))
+    expect(result.decision.disposition).toBe(disposition)
+    expect(result.action.executed).toBe(false)
   })
 
   it('never performs real execution while prerequisites remain incomplete', () => {

@@ -10,6 +10,7 @@ describe('Agentic AI 601 authority contracts', () => {
     expect(ladder.stages.map((stage: { id: string }) => stage.id)).toEqual([
       'observe',
       'recommend',
+      'shadow',
       'human_approval',
       'bounded_action',
       'validate_or_rollback',
@@ -17,6 +18,7 @@ describe('Agentic AI 601 authority contracts', () => {
     ])
     expect(ladder.promotion.humanOwned).toBe(true)
     expect(ladder.demotion.automatic).toBe(true)
+    expect(ladder.envelope).toMatchObject({ approvalTtlSeconds: 300, maxActionDurationSeconds: 2, maxTargets: 1, maxConcurrency: 1, singleUse: true, transferable: false })
   })
 
   it('fails closed on policy, evidence, scope, and kill-switch gaps', () => {

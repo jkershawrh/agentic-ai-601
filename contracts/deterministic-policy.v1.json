@@ -31,6 +31,8 @@
     "allowedConditionClasses": ["synthetic.pod_unhealthy"],
     "maxTargets": 1,
     "maxConcurrency": 1,
+    "approvalTtlSeconds": 300,
+    "maxActionDurationSeconds": 2,
     "approvalSingleUse": true,
     "missingEvidence": "deny",
     "inconclusiveEvaluation": "deny"

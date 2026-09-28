@@ -1,0 +1,42 @@
+schema_version: agentic-ai-601/validation-matrix/v1
+status: factory-verified-rehearsal
+authority_execution_enabled: false
+gates:
+  contract_first:
+    evidence:
+      - f686e4b77a750200722aa9297f2147207c5b028f records the intentional RED contract tests.
+      - contracts/ contains the authority, policy, action, evaluation, evidence, and research boundaries.
+    expected: RED precedes GREEN in immutable history.
+  deterministic_authority:
+    evidence:
+      - tests/authorityContracts.test.ts
+      - server/engine.test.ts
+      - server/evaluation.test.ts
+      - server/httpServer.test.ts
+    expected: Missing scope, approval, evidence, or prerequisites fails closed.
+  complete_loop:
+    evidence:
+      - server/engine.ts
+      - showroom/content/modules/ROOT/pages/
+    expected: Signal, decision, simulated action, validation or rollback, and learning share one evidence record.
+  presentation:
+    evidence:
+      - visual-tests/presentation.spec.ts
+      - story.brief.yaml
+      - demo-blueprint.yaml
+    expected: Seven scenes fit 1920x1080 and 1440x900 without scrolling and end in one lab handoff.
+  showroom:
+    evidence:
+      - showroom/scripts/validate-content.mjs
+      - showroom/content/modules/ROOT/nav.adoc
+    expected: Eight ordered stages remain separate from the presentation.
+  packaging:
+    evidence:
+      - charts/agentic-ai-601/
+      - .github/workflows/release.yml
+    expected: Linux AMD64 digest-bound images, zero HIGH or CRITICAL findings, SPDX SBOMs, and OIDC signatures and provenance.
+  production_authority:
+    evidence:
+      - contracts/authority-ladder.v1.json
+      - handoff/catalog-certification.proposed.yaml
+    expected: Disabled until Agentic AI 401 and 501 are independently certified and Launchpad completes every subsequent gate.

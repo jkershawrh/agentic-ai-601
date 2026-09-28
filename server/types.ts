@@ -1,4 +1,4 @@
-export type AuthorityStage = 'observe' | 'recommend' | 'human_approval' | 'bounded_action' | 'validate_or_rollback' | 'learn'
+export type AuthorityStage = 'observe' | 'recommend' | 'shadow' | 'human_approval' | 'bounded_action' | 'validate_or_rollback' | 'learn'
 export type Scenario = 'healthy' | 'restart_required' | 'policy_denied' | 'validation_failure' | 'kill_switch'
 
 export interface LoopRequest {

@@ -3,14 +3,15 @@ import type { AuthorityStage, LoopRequest } from './types.js'
 const stageRank: Record<AuthorityStage, number> = {
   observe: 0,
   recommend: 1,
-  human_approval: 2,
-  bounded_action: 3,
-  validate_or_rollback: 4,
-  learn: 5,
+  shadow: 2,
+  human_approval: 3,
+  bounded_action: 4,
+  validate_or_rollback: 5,
+  learn: 6,
 }
 
 export interface PolicyResult {
-  disposition: 'observe' | 'recommend' | 'request_approval' | 'simulate' | 'deny'
+  disposition: 'observe' | 'recommend' | 'shadow' | 'request_approval' | 'simulate' | 'deny'
   reason: string
   grantedStage: AuthorityStage
 }
@@ -22,6 +23,7 @@ export function evaluatePolicy(request: LoopRequest): PolicyResult {
   if (request.scenario === 'healthy') return { disposition: 'observe', reason: 'no_action_required', grantedStage: 'observe' }
   if (stageRank[request.requestedStage] === 0) return { disposition: 'observe', reason: 'observe_only', grantedStage: 'observe' }
   if (stageRank[request.requestedStage] === 1) return { disposition: 'recommend', reason: 'recommendation_only', grantedStage: 'recommend' }
+  if (stageRank[request.requestedStage] === 2) return { disposition: 'shadow', reason: 'shadow_evaluation_only', grantedStage: 'shadow' }
   if (!request.approvalToken) return { disposition: 'request_approval', reason: 'single_use_human_approval_required', grantedStage: 'recommend' }
   if (!request.simulation) return { disposition: 'deny', reason: 'prerequisite_certification_incomplete', grantedStage: 'human_approval' }
   return { disposition: 'simulate', reason: 'synthetic_lab_simulation_only', grantedStage: request.requestedStage }

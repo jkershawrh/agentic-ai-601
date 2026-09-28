@@ -38,7 +38,7 @@ beats:
   - beat: system-reveal
     claim: The loop separates signal, deterministic decision, bounded simulation, independent validation, rollback, and offline learning.
   - beat: live-proof
-    claim: The rehearsal service produces distinct observe, recommend, simulate, rollback, and demotion results through one path.
+    claim: The rehearsal service produces distinct observe, recommend, shadow, simulate, rollback, and demotion results through one path.
   - beat: tradeoffs
     claim: Missing prerequisites, policy, evidence, scope, or approval produce denial rather than guessed authority.
   - beat: transformation

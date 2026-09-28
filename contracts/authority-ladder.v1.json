@@ -12,6 +12,7 @@
   "stages": [
     {"id":"observe","mutation":false,"humanApproval":false},
     {"id":"recommend","mutation":false,"humanApproval":false},
+    {"id":"shadow","mutation":false,"humanApproval":false},
     {"id":"human_approval","mutation":false,"humanApproval":true},
     {"id":"bounded_action","mutation":"synthetic-only","humanApproval":true},
     {"id":"validate_or_rollback","mutation":"synthetic-only","humanApproval":true},
@@ -22,6 +23,14 @@
     "automatic": false,
     "classSpecific": true,
     "requiresImmutableEvidence": true
+  },
+  "envelope": {
+    "approvalTtlSeconds": 300,
+    "maxActionDurationSeconds": 2,
+    "maxTargets": 1,
+    "maxConcurrency": 1,
+    "singleUse": true,
+    "transferable": false
   },
   "demotion": {
     "automatic": true,

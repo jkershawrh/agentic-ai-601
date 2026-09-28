@@ -13,6 +13,6 @@ The action is an in-memory simulation scoped to `agentic-ai-601-lab-*`. No comma
 
 == Learner outcome
 
-Produce a reviewable authority envelope and hash-linked evidence record that demonstrate observation, recommendation, human approval, a bounded reversible simulation, independent validation, rollback, demotion, and human-owned promotion.
+Produce a reviewable authority envelope and hash-linked evidence record that demonstrate observation, recommendation, shadow evaluation, human approval, a bounded reversible simulation, independent validation, rollback, demotion, and human-owned promotion.
 
 Begin with xref:00-preflight.adoc[Preflight].

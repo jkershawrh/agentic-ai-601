@@ -4,7 +4,7 @@
 
 Use deterministic, deny-by-default policy to separate a recommendation from permission.
 
-Repeat the request with `requestedStage` set to `recommend`. Then try `bounded_action` without an approval token. The first returns `recommend`; the second returns `request_approval`.
+Repeat the request with `requestedStage` set to `recommend`, then `shadow`. Both remain mutation-free: shadow evaluates the recommendation against the observed event but cannot execute it. Finally try `bounded_action` without an approval token; it returns `request_approval`.
 
 Review the fixed order in `contracts/deterministic-policy.v1.json`. Emergency stop, prerequisites, scope, allowlists, authority, approval, blast radius, concurrency, idempotency, and evidence are not model decisions.
 

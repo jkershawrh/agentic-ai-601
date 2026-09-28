@@ -32,3 +32,19 @@ Run the qualification service locally:
 npm run build:server
 PORT=8090 npm run start:server
 ```
+
+## Factory outputs
+
+- `demo-blueprint.yaml` and `story.brief.yaml`: the seven-scene decision story.
+- `showroom/`: the separate eight-stage hands-on lab.
+- `contracts/`: versioned, deterministic authority and evidence contracts.
+- `server/`: the lab-only qualification service and emergency stop.
+- `charts/agentic-ai-601/`: fail-closed OpenShift packaging with digest-only images.
+- `tests/`: the acceptance matrix, claim registry, benchmark rubric, and executable tests.
+- `handoff/`: a proposed Launchpad intake that grants no certification or publication authority.
+
+The release workflow builds Linux AMD64 images, rejects any HIGH or CRITICAL
+finding, publishes SPDX JSON SBOMs, and uses Sigstore with GitHub OIDC to sign
+each immutable digest and attach SLSA v1 provenance. Exact reviewed digests live
+in the handoff rather than being committed back into the source revision that
+built them.

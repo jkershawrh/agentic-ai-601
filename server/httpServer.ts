@@ -3,7 +3,7 @@ import { EarnedAuthorityEngine } from './engine.js'
 import type { AuthorityStage, LoopRequest, Scenario } from './types.js'
 
 const scenarios = new Set<Scenario>(['healthy', 'restart_required', 'policy_denied', 'validation_failure', 'kill_switch'])
-const stages = new Set<AuthorityStage>(['observe', 'recommend', 'human_approval', 'bounded_action', 'validate_or_rollback', 'learn'])
+const stages = new Set<AuthorityStage>(['observe', 'recommend', 'shadow', 'human_approval', 'bounded_action', 'validate_or_rollback', 'learn'])
 
 function json(response: ServerResponse, status: number, body: unknown) {
   response.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' })

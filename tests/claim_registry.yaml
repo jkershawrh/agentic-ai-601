@@ -1,0 +1,35 @@
+schema_version: agentic-ai-601/claim-registry/v1
+reviewed_on: "2026-09-28"
+claims:
+  - id: openshift-policy-controls
+    statement: OpenShift namespaces, RBAC, NetworkPolicy, quotas, and admission controls can constrain workload scope.
+    classification: verified-product-capability
+    source: https://docs.redhat.com/en/documentation/openshift_container_platform/
+  - id: sandboxed-containers
+    statement: OpenShift sandboxed containers can provide a Kata-based runtime boundary subject to release-specific platform support.
+    classification: verified-product-capability-with-release-constraints
+    source: https://docs.redhat.com/en/documentation/openshift_sandboxed_containers/1.10/html/deploying_openshift_sandboxed_containers/deploying-osc_metal-osc
+  - id: openshell
+    statement: OpenShell secure agent onboarding appears as an OpenShift AI 3.5 Developer Preview using upstream artifacts and is unsupported for production.
+    classification: developer-preview-not-production-authority
+    source: https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.5/html/release_notes/developer-preview-features_relnotes
+  - id: governed-cognitive-loop
+    statement: GCL is a research governance pattern used for reasoning in this candidate.
+    classification: research-concept-not-red-hat-product
+    source: discovery-review.md
+  - id: agent-passport
+    statement: Agent passport is a research authority-envelope concept.
+    classification: research-concept-not-red-hat-product
+    source: discovery-review.md
+  - id: immutable-ledger
+    statement: Immutable ledger is an append-only evidence architecture requirement, not a verified product claim.
+    classification: research-concept-not-red-hat-product
+    source: discovery-review.md
+  - id: rossoctl
+    statement: rossoctl is a proposed reviewer interface and is not shipped by this candidate.
+    classification: research-concept-not-red-hat-product
+    source: discovery-review.md
+  - id: earned-authority
+    statement: This repository demonstrates synthetic qualification only and has not earned production execution authority.
+    classification: factory-observation
+    source: contracts/authority-ladder.v1.json
