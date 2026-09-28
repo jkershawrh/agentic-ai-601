@@ -36,7 +36,6 @@ jobs:
       contents: read
       packages: write
       id-token: write
-      attestations: write
       security-events: write
     strategy:
       fail-fast: false
@@ -54,6 +53,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6
+        with:
+          cosign-release: v3.1.3
       - name: Build and publish linux/amd64 image
         id: build
         uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
@@ -86,15 +89,29 @@ jobs:
         with:
           name: sbom-${{ matrix.name }}
           path: sbom-${{ matrix.name }}.spdx.json
-      - name: Attest the immutable image digest with GitHub OIDC
-        id: attest
-        uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661
-        with:
-          subject-name: ghcr.io/${{ github.repository_owner }}/agentic-ai-601-${{ matrix.name }}
-          subject-digest: ${{ steps.build.outputs.digest }}
-          push-to-registry: true
-      - name: Verify GitHub OIDC provenance attestation
+      - name: Write SLSA v1 provenance predicate
         env:
-          GH_TOKEN: ${{ github.token }}
+          IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/agentic-ai-601-${{ matrix.name }}
+          IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+        run: node scripts/write-provenance.mjs
+      - name: Sign immutable digest and attach provenance with GitHub OIDC
+        env:
           IMAGE: ghcr.io/${{ github.repository_owner }}/agentic-ai-601-${{ matrix.name }}@${{ steps.build.outputs.digest }}
-        run: gh attestation verify "oci://${IMAGE}" --repo "${GITHUB_REPOSITORY}"
+        run: |
+          cosign sign --yes "${IMAGE}"
+          cosign attest --yes --type slsaprovenance1 --predicate provenance.json "${IMAGE}"
+      - name: Verify Sigstore signature and provenance attestation
+        env:
+          IMAGE: ghcr.io/${{ github.repository_owner }}/agentic-ai-601-${{ matrix.name }}@${{ steps.build.outputs.digest }}
+          IDENTITY: https://github.com/${{ github.repository }}/.github/workflows/release.yml@${{ github.ref }}
+          ISSUER: https://token.actions.githubusercontent.com
+        run: |
+          cosign verify \
+            --certificate-identity "${IDENTITY}" \
+            --certificate-oidc-issuer "${ISSUER}" \
+            "${IMAGE}"
+          cosign verify-attestation \
+            --type slsaprovenance1 \
+            --certificate-identity "${IDENTITY}" \
+            --certificate-oidc-issuer "${ISSUER}" \
+            "${IMAGE}"
