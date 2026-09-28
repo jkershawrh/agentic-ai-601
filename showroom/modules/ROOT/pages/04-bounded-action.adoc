@@ -1,0 +1,20 @@
+= 4. Bounded action
+
+== Objective
+
+Exercise one approved, idempotent, reversible action simulation without reaching an external target.
+
+[source,bash]
+----
+curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
+  -H 'content-type: application/json' \
+  -H 'x-correlation-id: lab-action-1' \
+  -H 'idempotency-key: lab-action-1' \
+  -d '{"scenario":"restart_required","requestedStage":"bounded_action","namespace":"agentic-ai-601-lab-user","approvalToken":"approval-lab-action-1","simulation":true}'
+----
+
+Confirm one target, one attempt, synthetic simulation, and `executionAuthorityEnabled: false`. Repeating the same idempotency key must return the same record rather than a second attempt.
+
+== Learner checkpoint
+
+*Pass when:* target count and concurrency remain one, duplicate delivery is harmless, and production authority remains disabled.

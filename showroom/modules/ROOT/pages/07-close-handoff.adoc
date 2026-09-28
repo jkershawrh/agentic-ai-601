@@ -1,0 +1,13 @@
+= 7. Close and handoff
+
+== Objective
+
+Package an honest, non-certified factory receipt for independent Launchpad review.
+
+Confirm the handoff declares `orderable: false`, `certified: false`, `promotion_eligible: false`, and `execution_authority_enabled: false`. No target environment or Launchpad state was changed. Automated promotion is false.
+
+The remaining blockers are genuine: 401 certification, 501 certification, target and release approval, class-specific thresholds, live one-seat proof, capacity and reclaim graduation, artifact verification, and human promotion approval.
+
+== Learner checkpoint
+
+*Pass when:* the final artifact states what was proven, what remains REHEARSAL, and which independent authority must act next.

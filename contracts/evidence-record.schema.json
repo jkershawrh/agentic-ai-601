@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agentic-ai-601/evidence-record.schema.json",
+  "title": "Agentic AI 601 closed-loop evidence record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "recordId", "correlationId", "idempotencyKey", "sourceState", "signal", "decision", "action", "validation", "learning", "authority", "previousHash", "recordHash"],
+  "properties": {
+    "schemaVersion": {"const": "agentic-ai-601/evidence-record/v1"},
+    "recordId": {"type": "string", "minLength": 1},
+    "correlationId": {"type": "string", "minLength": 1},
+    "idempotencyKey": {"type": "string", "minLength": 1},
+    "sourceState": {"enum": ["live", "rehearsal", "offline"]},
+    "signal": {"type": "object"},
+    "decision": {"type": "object"},
+    "action": {"type": "object"},
+    "validation": {"type": "object"},
+    "learning": {"type": "object"},
+    "authority": {"type": "object"},
+    "previousHash": {"type": "string"},
+    "recordHash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

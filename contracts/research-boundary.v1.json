@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "agentic-ai-601/research-boundary/v1",
+  "verifiedProductCapabilities": [
+    "Red Hat OpenShift namespace, RBAC, NetworkPolicy, quotas, jobs, and admission controls",
+    "Red Hat OpenShift GitOps and Pipelines for reviewable delivery",
+    "Red Hat OpenShift Logging and OpenTelemetry-compatible evidence export",
+    "Red Hat OpenShift sandboxed containers with release-specific platform constraints"
+  ],
+  "researchConcepts": {
+    "GCL": "research-oriented governance control-layer pattern; not represented as a Red Hat product",
+    "agentPassport": "research-oriented portable authority-envelope concept",
+    "immutableLedger": "research-oriented append-only evidence architecture requirement",
+    "rossoctl": "research-oriented proposed reviewer CLI; not shipped here",
+    "OpenShell": "upstream alpha and OpenShift AI Developer Preview integration; not supported for production use"
+  },
+  "sources": [
+    "https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.5/html/release_notes/developer-preview-features_relnotes",
+    "https://docs.redhat.com/en/documentation/openshift_sandboxed_containers/1.10/html/deploying_openshift_sandboxed_containers/deploying-osc_metal-osc",
+    "local:/Users/jkershaw/Documents/OpenShell/README.md@474d2d4ad63be1b62396f4af5085580f0847054c"
+  ]
+}

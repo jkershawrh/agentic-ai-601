@@ -1,34 +1,31 @@
-# Discovery review
+# Agentic AI 601 discovery review
 
-Source: `/Users/jkershaw/Documents/agent-promotion`  
-Destination: `/Users/jkershaw/Documents/agentic-ai-601`  
-Blueprint status: **draft**
+Primary source: `agent-promotion@0a9009b8262d8a373dfb87709dc74ee2dcc6003b`  
+Factory candidate: `agentic-ai-601`  
+Status: reviewed research and qualification blueprint; not certified or orderable.
 
-## Automated findings
+## Why this is a separate repository
 
-- 122 candidate source artifacts recorded.
-- 2 runtime-object candidates detected.
-- AI signal: `none`; necessity: `false`.
+No local or `jkershawrh` GitHub repository named `agentic-ai-601` existed at discovery time. Agent Promotion is the cleanest primary source for earned authority, refusal, demotion, and human ratification. StarGate supplies a useful synthetic feedback-loop example. GCL, Agent Passport, ARE Immutable Ledger, and OpenShell remain supporting research sources rather than a combined product stack.
 
-These are discovery candidates, not approved presentation claims.
+## Resolved findings
 
-## Required review
+- The natural operational pattern is **Signal → Decision → Action → Validate → Learn**.
+- Production execution is disabled because Agentic AI 401 and 501 are not certified.
+- The implemented action path is an in-memory synthetic simulation constrained to `agentic-ai-601-lab-*`; it cannot reach a cluster or external remediation API.
+- Policy is deterministic, ordered, and deny-by-default. Promotion is human-owned; demotion is automatic on failed validation, policy violation, missing evidence, drift, or emergency stop.
+- The current rehearsal uses no LLM. Optional AI classification has advisory authority only and abstains when unavailable or inconclusive.
+- No Intel hardware telemetry is connected, so the candidate makes no performance, placement, latency, throughput, capacity, or efficiency claim.
 
-- Confirm the primary user, workload, recognized problem, audience decision, and desired outcome.
-- Verify every runtime object against contracts, manifests, implementation, or a live deployment.
-- Trace at least one typed end-to-end architecture flow with protocols and evidence IDs.
-- Define the source system's operational pattern in domain language, including one changed condition and the close.
-- Inventory live evidence and distinguish live, rehearsal, simulated, and future-state behavior.
-- Resolve deterministic policy, fail-closed behavior, action authority, and final decision ownership.
-- If AI participates, verify its task, exact inputs and outputs, model/hardware identity sources, evidence access, validation, and fallback.
-- Record discrepancies rather than silently reconciling documentation and implementation.
+## Product and research boundary
 
-## Promotion gate
+Verified platform capabilities are ordinary Red Hat OpenShift controls and release-specific OpenShift sandboxed containers. Red Hat OpenShift AI 3.5 documents OpenShell secure agent onboarding as Developer Preview using upstream artifacts and unsupported for production. The inspected NVIDIA OpenShell source labels itself alpha, with experimental Kubernetes deployment.
 
-Do not change `status: draft` until material findings are sourced. Then run:
+GCL, agent passport, immutable ledger, and `rossoctl` are explicitly research-oriented concepts. None is represented as a verified Red Hat product.
 
-```bash
-npm run validate:blueprint -- /Users/jkershaw/Documents/agentic-ai-601/demo-blueprint.yaml
-```
+## Activation blockers
 
-Validation requires a domain-specific operational step, a typed architecture flow, evidence, and resolved AI authority when AI is used.
+1. Agentic AI 401 certification.
+2. Agentic AI 501 certification of workload, policy, recovery, evidence, and human-promotion envelopes.
+3. Independent 601 Launchpad intake, trusted render review, artifact verification, live one-seat journey, capacity/reclaim graduation, and promotion approval.
+4. Approval of one target release, isolation mechanism, condition class, runbook, evaluation thresholds, evidence retention, and emergency-stop owner.

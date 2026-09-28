@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "agentic-ai-601/authority-ladder/v1",
+  "status": "research-qualification",
+  "executionAuthorityEnabled": false,
+  "prerequisites": ["agentic-ai-401-certified", "agentic-ai-501-certified"],
+  "scope": {
+    "environment": "synthetic-lab-only",
+    "namespacePattern": "agentic-ai-601-lab-*",
+    "transferable": false,
+    "expires": true
+  },
+  "stages": [
+    {"id":"observe","mutation":false,"humanApproval":false},
+    {"id":"recommend","mutation":false,"humanApproval":false},
+    {"id":"human_approval","mutation":false,"humanApproval":true},
+    {"id":"bounded_action","mutation":"synthetic-only","humanApproval":true},
+    {"id":"validate_or_rollback","mutation":"synthetic-only","humanApproval":true},
+    {"id":"learn","mutation":false,"humanApproval":true}
+  ],
+  "promotion": {
+    "humanOwned": true,
+    "automatic": false,
+    "classSpecific": true,
+    "requiresImmutableEvidence": true
+  },
+  "demotion": {
+    "automatic": true,
+    "triggers": ["policy_violation", "evaluation_drift", "missing_evidence", "failed_validation", "kill_switch"]
+  }
+}

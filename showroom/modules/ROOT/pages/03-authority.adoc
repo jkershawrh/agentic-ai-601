@@ -1,0 +1,13 @@
+= 3. Authority
+
+== Objective
+
+Define an authority envelope that is narrow, human-owned, expiring, single-use, and revocable.
+
+Inspect `contracts/authority-ladder.v1.json` and `contracts/evaluation-matrix.v1.json`. Promotion applies only to one condition class, runbook, target class, environment, and blast radius. Aggregate accuracy cannot promote. Draft evaluation thresholds require human approval.
+
+Use the same approval token twice with different idempotency keys. The second use must be denied as `approval_token_already_used`.
+
+== Learner checkpoint
+
+*Pass when:* you can distinguish workload identity from behavioral authorization and show that the agent cannot promote itself.

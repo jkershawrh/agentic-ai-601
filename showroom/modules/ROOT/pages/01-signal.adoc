@@ -1,0 +1,20 @@
+= 1. Signal
+
+== Objective
+
+Create a stable, source-labeled synthetic signal without granting mutation authority.
+
+[source,bash]
+----
+curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
+  -H 'content-type: application/json' \
+  -H 'x-correlation-id: lab-signal-1' \
+  -H 'idempotency-key: lab-signal-1' \
+  -d '{"scenario":"restart_required","requestedStage":"observe","namespace":"agentic-ai-601-lab-user"}'
+----
+
+Inspect provenance, condition class, taxonomy version, and authority stage. Confidence is intentionally absent because no model ran.
+
+== Learner checkpoint
+
+*Pass when:* the evidence identifies `synthetic.pod_unhealthy`, reports REHEARSAL source state, and records no action attempt.

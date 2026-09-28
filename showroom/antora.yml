@@ -1,0 +1,13 @@
+name: agentic-ai-601
+title: Agentic AI 601 — Earn the Right to Act
+version: ~
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    experimental: true
+    page-pagination: true
+    source-highlighter: highlight.js
+    lab-mode: REHEARSAL
+    authority-enabled: false

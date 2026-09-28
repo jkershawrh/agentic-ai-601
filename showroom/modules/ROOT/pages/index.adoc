@@ -1,0 +1,18 @@
+= Agentic AI 601 — Earn the Right to Act
+
+[IMPORTANT]
+====
+This is a *REHEARSAL*, synthetic-only qualification lab. Production execution authority is disabled. The work cannot conclude that 601 is certified, orderable, or approved for external remediation.
+====
+
+You will construct and challenge one governed loop:
+
+`Signal → Decision → Action → Validate → Learn`
+
+The action is an in-memory simulation scoped to `agentic-ai-601-lab-*`. No command in this lab mutates an OpenShift cluster, Launchpad, or a production workload.
+
+== Learner outcome
+
+Produce a reviewable authority envelope and hash-linked evidence record that demonstrate observation, recommendation, human approval, a bounded reversible simulation, independent validation, rollback, demotion, and human-owned promotion.
+
+Begin with xref:00-preflight.adoc[Preflight].

@@ -46,4 +46,10 @@ describe('Agentic AI 601 authority contracts', () => {
       'learning',
     ]))
   })
+
+  it('limits the only action to one reversible, idempotent, timed attempt', () => {
+    const catalog = contract('contracts/action-catalog.v1.json')
+    expect(catalog.actions).toHaveLength(1)
+    expect(catalog.actions[0]).toMatchObject({ reversible: true, idempotent: true, timeoutMs: 2000, maxAttempts: 1, blastRadius: { maxTargets: 1, maxConcurrency: 1 } })
+  })
 })

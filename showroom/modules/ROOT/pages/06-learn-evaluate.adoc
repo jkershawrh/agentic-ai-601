@@ -1,0 +1,18 @@
+= 6. Learn and evaluate
+
+== Objective
+
+Review the complete evidence chain and apply class-specific evaluation without self-modifying policy.
+
+[source,bash]
+----
+curl -fsS http://qualification:8080/api/v1/evidence/verify
+----
+
+The result must be `valid: true`. Compare the record fields with `contracts/evidence-record.schema.json`. Learning appends reviewer disposition and evaluation-set identity; it does not rewrite policy, thresholds, the allowlist, or authority.
+
+Evaluate precision, recall, extraction accuracy, calibration error, abstention quality, policy compliance, validation success, recovery, and unauthorized actions by condition class and consequence.
+
+== Learner checkpoint
+
+*Pass when:* the hash link verifies and the promotion recommendation remains false pending human disposition and prerequisite certification.

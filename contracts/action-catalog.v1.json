@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "agentic-ai-601/action-catalog/v1",
+  "actions": [
+    {
+      "id": "restart-synthetic-workload-v1",
+      "class": "workload.restart",
+      "conditionClass": "synthetic.pod_unhealthy",
+      "risk": "low",
+      "targetPattern": "deployment/demo-workload",
+      "reversible": true,
+      "idempotent": true,
+      "timeoutMs": 2000,
+      "maxAttempts": 1,
+      "blastRadius": {"maxTargets": 1, "maxConcurrency": 1}
+    }
+  ]
+}

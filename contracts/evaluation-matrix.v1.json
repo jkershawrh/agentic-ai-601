@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "agentic-ai-601/evaluation-matrix/v1",
+  "status": "draft-thresholds-require-human-approval",
+  "conditionClasses": {
+    "synthetic.pod_unhealthy": {
+      "minimumCases": 50,
+      "precision": 0.98,
+      "recall": 0.95,
+      "extractionAccuracy": 0.98,
+      "maximumCalibrationError": 0.05,
+      "minimumAbstentionQuality": 0.95,
+      "policyCompliance": 1,
+      "validationSuccess": 0.99,
+      "unauthorizedActions": 0
+    }
+  },
+  "aggregateOnlyPromotionForbidden": true,
+  "automaticPromotionForbidden": true
+}

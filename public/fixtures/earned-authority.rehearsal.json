@@ -1,0 +1,8 @@
+{
+  "sourceState": "REHEARSAL",
+  "productionAuthority": "disabled",
+  "conditionClass": "synthetic.pod_unhealthy",
+  "disposition": "recommend",
+  "measurements": "not collected",
+  "certification": "not earned"
+}

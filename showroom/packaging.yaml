@@ -1,0 +1,22 @@
+schemaVersion: agentic-ai-601-showroom-package/v1
+name: agentic-ai-601
+title: Agentic AI 601 — Earn the Right to Act
+contentRoot: showroom
+componentDescriptor: showroom/antora.yml
+playbook: site.yml
+mode: rehearsal-only
+stages:
+  - 00-preflight.adoc
+  - 01-signal.adoc
+  - 02-decision.adoc
+  - 03-authority.adoc
+  - 04-bounded-action.adoc
+  - 05-validate-rollback.adoc
+  - 06-learn-evaluate.adoc
+  - 07-close-handoff.adoc
+claims:
+  liveExecution: false
+  certification: false
+  orderable: false
+  automatedPromotion: false
+  externalRemediation: false

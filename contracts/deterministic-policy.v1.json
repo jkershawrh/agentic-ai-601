@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "agentic-ai-601/deterministic-policy/v1",
+  "defaultDecision": "deny",
+  "evaluationOrder": [
+    "emergency_stop",
+    "prerequisite_certification",
+    "environment",
+    "condition_class",
+    "action_allowlist",
+    "authority_envelope",
+    "human_approval",
+    "blast_radius",
+    "concurrency",
+    "idempotency",
+    "evidence_completeness"
+  ],
+  "requiredChecks": [
+    "prerequisite_certification",
+    "condition_class",
+    "action_allowlist",
+    "authority_envelope",
+    "blast_radius",
+    "concurrency",
+    "idempotency",
+    "emergency_stop"
+  ],
+  "rules": {
+    "environment": "synthetic-lab-only",
+    "namespacePattern": "agentic-ai-601-lab-*",
+    "allowedActionClasses": ["workload.restart"],
+    "allowedConditionClasses": ["synthetic.pod_unhealthy"],
+    "maxTargets": 1,
+    "maxConcurrency": 1,
+    "approvalSingleUse": true,
+    "missingEvidence": "deny",
+    "inconclusiveEvaluation": "deny"
+  }
+}

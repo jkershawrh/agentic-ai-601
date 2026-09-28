@@ -1,0 +1,13 @@
+= 5. Validate and rollback
+
+== Objective
+
+Prove that failed validation causes rollback and demotion, and that the emergency stop wins before action.
+
+Run the `validation_failure` scenario with a new approval token and `simulation: true`. Verify `rollbackTriggered`, `rollbackPassed`, and `demotionTriggered` are true. Then run `kill_switch`; it must deny with `emergency_stop_active` and record zero attempts.
+
+Validation evidence is logically independent of the action request. A claimed action success cannot override a failed observation.
+
+== Learner checkpoint
+
+*Pass when:* rollback succeeds, authority is demoted, and the kill switch prevents action before any target is touched.

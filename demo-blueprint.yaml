@@ -1,184 +1,211 @@
 version: 1
-status: draft
+status: reviewed-factory-blueprint
 source:
-  name: "agent-promotion"
-  kind: repository
-  location: "/Users/jkershaw/Documents/agent-promotion"
-  revision: "0a9009b"
-  discovered_at: "2026-09-28T21:26:31.292Z"
+  name: agentic-ai-601
+  kind: repository-derived-research-specialization
+  location: /Users/jkershaw/Documents/agent-promotion
+  revision: 0a9009b8262d8a373dfb87709dc74ee2dcc6003b
+  discovered_at: "2026-09-28"
   inspected_artifacts:
-    - ".pytest_cache/README.md"
-    - ".venv/lib/python3.9/site-packages/_distutils_hack/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_distutils_hack/override.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_argcomplete.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_code/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_code/code.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_code/source.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_io/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_io/pprint.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_io/saferepr.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_io/terminalwriter.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_io/wcwidth.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_py/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_py/error.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_py/path.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/_version.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/assertion/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/assertion/rewrite.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/assertion/truncate.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/assertion/util.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/cacheprovider.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/capture.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/compat.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/config/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/config/argparsing.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/config/compat.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/config/exceptions.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/config/findpaths.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/debugging.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/deprecated.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/doctest.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/faulthandler.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/fixtures.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/freeze_support.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/helpconfig.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/hookspec.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/junitxml.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/legacypath.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/logging.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/main.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/mark/__init__.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/mark/expression.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/mark/structures.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/monkeypatch.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/nodes.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/outcomes.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/pastebin.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/pathlib.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/pytester.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/pytester_assertions.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/python.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/python_api.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/raises.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/recwarn.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/reports.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/runner.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/scope.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/setuponly.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/setupplan.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/skipping.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/stash.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/stepwise.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/terminal.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/threadexception.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/timing.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/tmpdir.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/tracemalloc.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/unittest.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/unraisableexception.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/warning_types.py"
-    - ".venv/lib/python3.9/site-packages/_pytest/warnings.py"
-    - ".venv/lib/python3.9/site-packages/_yaml/__init__.py"
-    - ".venv/lib/python3.9/site-packages/annotated_doc/__init__.py"
-    - ".venv/lib/python3.9/site-packages/annotated_doc/main.py"
-    - ".venv/lib/python3.9/site-packages/annotated_types/__init__.py"
-    - ".venv/lib/python3.9/site-packages/annotated_types/test_cases.py"
-    - ".venv/lib/python3.9/site-packages/anyio/__init__.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_backends/__init__.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_backends/_trio.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/__init__.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_asyncio_selector_thread.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_contextmanagers.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_eventloop.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_exceptions.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_fileio.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_resources.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_signals.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_sockets.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_streams.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_subprocesses.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_synchronization.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_tasks.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_tempfile.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_testing.py"
-    - ".venv/lib/python3.9/site-packages/anyio/_core/_typedattr.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/__init__.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_eventloop.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_resources.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_sockets.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_streams.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_subprocesses.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_tasks.py"
-    - ".venv/lib/python3.9/site-packages/anyio/abc/_testing.py"
-    - ".venv/lib/python3.9/site-packages/anyio/from_thread.py"
-    - ".venv/lib/python3.9/site-packages/anyio/functools.py"
-    - ".venv/lib/python3.9/site-packages/anyio/lowlevel.py"
-    - ".venv/lib/python3.9/site-packages/anyio/pytest_plugin.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/__init__.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/buffered.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/file.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/memory.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/stapled.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/text.py"
-    - ".venv/lib/python3.9/site-packages/anyio/streams/tls.py"
-    - ".venv/lib/python3.9/site-packages/anyio/to_interpreter.py"
-    - ".venv/lib/python3.9/site-packages/anyio/to_process.py"
-    - ".venv/lib/python3.9/site-packages/anyio/to_thread.py"
-    - ".venv/lib/python3.9/site-packages/backports/asyncio/runner/__init__.py"
-  discrepancies: []
+    - /Users/jkershaw/Documents/agent-promotion/app/authority/evaluator.py
+    - /Users/jkershaw/Documents/agent-promotion/app/authority/gate.py
+    - /Users/jkershaw/Documents/agent-promotion/app/authority/demotion.py
+    - /Users/jkershaw/Documents/agent-promotion/tests/test_edd_rubric.py
+    - /Users/jkershaw/Documents/stargate-platform/engine/feedback_loop.py
+    - /Users/jkershaw/Documents/stargate-platform/tests/test_feedback_loop.py
+    - /Users/jkershaw/Documents/governed-cognitive-loop/README.md
+    - /Users/jkershaw/Documents/agent-passport/README.md
+    - /Users/jkershaw/Documents/are-immutable-ledger/README.md
+    - /Users/jkershaw/Documents/OpenShell/README.md
+    - /Users/jkershaw/Documents/demo-story-starter/docs/lab-factory-roadmap.md
+  discrepancies:
+    - Agent Promotion has tier and ratification mechanics but does not bind authority to the complete 601 condition, runbook, environment, target, and blast-radius envelope.
+    - StarGate has a synthetic feedback-loop implementation, but its simulator applies recommendations without the complete 601 approval, validation-independence, kill-switch, and promotion contract.
+    - Agentic 401 and 501 are not certified; production execution authority is therefore disabled.
+    - GCL, agent passport, immutable ledger, and rossoctl are research concepts in this catalog item and are not represented as Red Hat products.
+    - OpenShell is upstream alpha and appears in Red Hat OpenShift AI 3.5 as an unsupported Developer Preview integration; it is not a production authority boundary here.
+    - No live Intel hardware or inference telemetry is connected, so the story makes no Intel performance claim.
 intent:
-  primary_user: unknown
-  workload: unknown
-  recognized_problem: unknown
-  audience_decision: unknown
-  desired_outcome: unknown
+  primary_user: Platform engineers, SREs, security reviewers, and AI governance teams responsible for safe operational automation
+  workload: One synthetic unhealthy-workload condition and one reversible restart runbook confined to a disposable lab namespace
+  recognized_problem: Model confidence and a successful recommendation do not establish permission, bounded impact, correct execution, or safe recovery.
+  audience_decision: Decide whether one versioned condition class has sufficient evidence for observe, recommend, human-approved simulation, or continued denial.
+  desired_outcome: Produce a human-reviewed authority envelope and a complete Signal to Decision to Action to Validate to Learn record without granting production authority.
 architecture:
-  actors: []
+  actors:
+    - id: learner
+      name: Platform reliability learner
+      kind: human
+      responsibility: Configure, challenge, and inspect the authority envelope and evidence record.
+      status: verified
+      source: lab-factory-roadmap.md Agentic AI 601 charter
+    - id: reviewer
+      name: Human authority reviewer
+      kind: human-authority
+      responsibility: Approve, suspend, demote, or reject the narrowly scoped authority envelope.
+      status: verified
+      source: agent-promotion ratification implementation and 601 charter
   runtime_objects:
-    - id: route
-      name: "route"
-      kind: route
-      responsibility: unknown
-      status: discovered
-      source: ".venv/lib/python3.9/site-packages/fastapi/openapi/utils.py"
-    - id: database
-      name: "database"
-      kind: database
-      responsibility: unknown
-      status: discovered
-      source: ".venv/lib/python3.9/site-packages/_pytest/cacheprovider.py"
-  boundaries: []
-  external_dependencies: []
-  flows: []
+    - id: signal-source
+      name: Synthetic condition generator
+      kind: evidence-source
+      responsibility: Emit a versioned lab-only condition with provenance and correlation identity.
+      status: implemented-in-601
+      source: server/engine.ts
+    - id: policy
+      name: Deterministic policy engine
+      kind: decision-service
+      responsibility: Evaluate emergency stop, prerequisites, environment, class, allowlist, authority, approval, blast radius, concurrency, idempotency, and evidence in fixed order.
+      status: implemented-in-601
+      source: server/policy.ts and contracts/deterministic-policy.v1.json
+    - id: authority-envelope
+      name: Earned-authority envelope
+      kind: governance-record
+      responsibility: Bind authority to one class, runbook, target, environment, blast radius, reviewer, and expiry.
+      status: implemented-as-research-contract
+      source: contracts/authority-ladder.v1.json
+    - id: executor
+      name: Synthetic bounded executor
+      kind: lab-simulator
+      responsibility: Simulate one idempotent reversible restart against one synthetic workload; never call an external target.
+      status: implemented-in-601
+      source: server/engine.ts
+    - id: validator
+      name: Independent outcome validator
+      kind: evaluation-service
+      responsibility: Compare the expected and observed synthetic state and require rollback on failure.
+      status: implemented-in-601
+      source: server/engine.ts
+    - id: evidence-store
+      name: Hash-linked evidence record
+      kind: append-only-research-pattern
+      responsibility: Bind correlation, idempotency, decision, action, validation, learning, authority, and prior-record hash.
+      status: implemented-as-local-research-pattern
+      source: contracts/evidence-record.schema.json and server/engine.ts
+  boundaries:
+    - id: namespace-boundary
+      name: Disposable lab namespace
+      purpose: Reject every action target outside agentic-ai-601-lab-* and cap target count and concurrency at one.
+      status: implemented-in-601
+    - id: authority-boundary
+      name: Human approval and emergency stop
+      purpose: Keep promotion human-owned and allow immediate denial, rollback, and demotion.
+      status: implemented-in-601
+    - id: research-boundary
+      name: Research versus product boundary
+      purpose: Prevent GCL, passport, ledger, rossoctl, or OpenShell preview concepts from being presented as supported product capabilities.
+      status: verified
+  external_dependencies:
+    - Independent Launchpad onboarding and certification after 401 and 501 prerequisites
+    - Red Hat OpenShift namespace, RBAC, NetworkPolicy, quota, and admission controls on an approved target
+    - Optional release-specific OpenShift sandboxed containers; OpenShell remains Developer Preview research only
+  flows:
+    - id: earned-authority-loop
+      name: Signal to governed learning record
+      status: implemented-rehearsal
+      steps:
+        - {from: learner, to: signal-source, purpose: choose one synthetic condition and stable correlation identity, protocol: HTTPS-JSON, evidence: signal-provenance}
+        - {from: signal-source, to: policy, purpose: classify and evaluate the fixed policy order, protocol: in-process-contract, evidence: decision-and-risk}
+        - {from: policy, to: authority-envelope, purpose: abstain, recommend, request approval, or permit lab simulation, protocol: versioned-policy, evidence: granted-stage}
+        - {from: authority-envelope, to: reviewer, purpose: obtain single-use human approval for the synthetic simulation, protocol: approval-record, evidence: approval-identity}
+        - {from: authority-envelope, to: executor, purpose: simulate one allowlisted reversible action inside the lab scope, protocol: in-process-simulator, evidence: action-receipt}
+        - {from: executor, to: validator, purpose: independently compare expected and observed synthetic state, protocol: validation-contract, evidence: validation-result}
+        - {from: validator, to: executor, purpose: trigger rollback when validation fails, protocol: rollback-contract, evidence: rollback-result}
+        - {from: validator, to: evidence-store, purpose: append the complete result and any demotion trigger, protocol: hash-linked-JSON, evidence: record-hash}
+        - {from: evidence-store, to: reviewer, purpose: support human review without automatic promotion, protocol: evidence-package, evidence: reviewer-disposition}
 operational_pattern:
-  name: unknown
-  rationale: Must be derived from domain workflows, contracts, and tests.
-  steps: []
-  changed_condition: null
-  close: null
-evidence: []
-decisions: []
+  name: Signal, Decide, Act, Validate, Learn
+  rationale: Level 601 earns a narrowly scoped and revocable right to act; it does not demonstrate generic autonomy.
+  steps:
+    - id: signal
+      name: Signal
+      action: Collect raw and normalized condition evidence, provenance, taxonomy, and stable correlation without mutation.
+      evidence: correlation ID, condition class, taxonomy version, extracted entities, and source state
+    - id: decision
+      name: Decision
+      action: Evaluate class-specific quality and deterministic policy, then abstain, recommend, request approval, or permit synthetic simulation.
+      evidence: policy version, ordered checks, risk class, confidence or abstention reason, and requested/granted authority
+    - id: action
+      name: Action
+      action: Exercise one idempotent reversible runbook in one disposable lab namespace after single-use approval.
+      evidence: approval identity, idempotency key, action parameters, before state, attempt count, target count, and timeout
+    - id: validate
+      name: Validate
+      action: Independently verify expected state, side effects, and rollback criteria; roll back and demote on failure.
+      evidence: after state, validation result, rollback receipt, emergency-stop state, and demotion reason
+    - id: learn
+      name: Learn
+      action: Append the complete outcome and reviewer disposition; update evaluation data offline without self-modifying authority.
+      evidence: record hash, prior hash, false-positive or false-negative disposition, evaluation-set version, and human review
+  changed_condition: The validation-failure scenario replaces the successful synthetic restart condition, forcing rollback and automatic demotion through the same path.
+  close: State that the factory evidence is complete while production execution, catalog certification, ordering, and promotion remain disabled.
+evidence:
+  - id: source-promotion-mechanics
+    claim: Promotion, refusal, demotion, and human ratification mechanics exist in the primary source.
+    source: /Users/jkershaw/Documents/agent-promotion@0a9009b8262d8a373dfb87709dc74ee2dcc6003b
+    source_state: verified-source
+    collection: source and test inspection
+  - id: source-feedback-loop
+    claim: A synthetic Signal to Decision to Action to Verify to Learn flow exists in StarGate.
+    source: /Users/jkershaw/Documents/stargate-platform@b5631a2f5d3242f88ec28819c1e892e4a3eacdcd
+    source_state: verified-source-limited
+    collection: implementation and test inspection
+  - id: local-qualification-service
+    claim: The 601 service exercises deny, recommend, approval, simulated action, validation, rollback, kill switch, idempotency, and hash-linked evidence paths.
+    source: server and contract tests
+    source_state: implemented-rehearsal
+    collection: current repository tests
+  - id: live-production-authority
+    claim: A certified target grants real bounded remediation authority.
+    source: future Launchpad certification
+    source_state: blocked
+    collection: unavailable until 401 and 501 certify and 601 independently graduates
+decisions:
+  - id: deterministic-admission
+    owner: Versioned policy engine
+    rule: Deny by default and evaluate the emergency stop before every other authority check.
+    fail_closed: true
+  - id: promotion
+    owner: Named human reviewer through an independently certified process
+    rule: Promotion is class-specific, evidence-based, time-bound, revocable, and never automatic.
+    fail_closed: true
+  - id: rollback-and-demotion
+    owner: Independent validator and emergency-stop control
+    rule: Failed validation triggers rollback and immediate demotion; the agent cannot suppress or rewrite the result.
+    fail_closed: true
+  - id: current-execution
+    owner: Factory prerequisite gate
+    rule: Real execution is disabled because Agentic AI 401 and 501 are not certified.
+    fail_closed: true
 ai_assessment:
-  needed: false
-  kind: none
-  rationale: "No AI runtime signal was discovered."
-  tasks: []
-  inputs: []
-  outputs: []
-  model_identity_source: null
-  hardware_identity_source: null
-  evidence_access: []
-  action_authority: unknown
-  validation: []
-  fallback: unknown
-  final_decision_owner: unknown
+  needed: optional
+  kind: mixed
+  rationale: An AI classifier may help with ambiguous extraction or explanation, but deterministic policy and human authority fully control action admission; the implemented rehearsal uses no model.
+  tasks:
+    - Optional classification or explanation when deterministic extraction is inconclusive
+  inputs:
+    - Approved signal and evidence identifiers only
+  outputs:
+    - Advisory condition proposal with calibrated confidence or abstention
+  model_identity_source: Not configured; no model participates in the current rehearsal service
+  hardware_identity_source: Not configured; no Intel performance or placement claim is made
+  evidence_access:
+    - Only the approved synthetic signal record
+  action_authority: none
+  validation:
+    - Deterministic class-specific evaluation
+    - Deterministic policy
+    - Independent outcome validation
+    - Human review
+  fallback: Abstain or use deterministic classification; missing AI never expands authority.
+  final_decision_owner: Human reviewer; Launchpad independently owns certification and promotion.
 story_mapping:
-  audience_question: unknown
-  stakes: []
-  architecture_flow_ids: []
-  live_proof_flow_ids: []
-  comparison: null
-  payoff: unknown
-  next_journey: unknown
+  audience_question: What must an agent prove before it receives one narrow and revocable right to act?
+  stakes:
+    - Model confidence alone cannot establish authorization or safe impact.
+    - Validation failure must remove authority faster than promotion grants it.
+  architecture_flow_ids: [earned-authority-loop]
+  live_proof_flow_ids: [earned-authority-loop]
+  comparison: Recommendation versus human-approved simulation versus failed validation with rollback and demotion
+  payoff: A complete research qualification record and explicit blockers, never unrestricted autonomy
+  next_journey: Independent Launchpad intake after Agentic AI 401 and 501 certification

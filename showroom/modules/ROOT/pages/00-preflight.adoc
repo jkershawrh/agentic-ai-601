@@ -1,0 +1,18 @@
+= 0. Preflight
+
+== Objective
+
+Confirm the source state, disabled production authority, synthetic namespace boundary, and research labels before running anything.
+
+[source,bash]
+----
+curl -fsS http://qualification:8080/api/v1/status
+----
+
+Verify `sourceState` is `rehearsal`, `executionAuthorityEnabled` is `false`, and both prerequisite certifications are `false`.
+
+GCL, agent passport, immutable ledger, and `rossoctl` are research concepts. OpenShell is an upstream alpha / OpenShift AI Developer Preview integration and is not a production control in this lab.
+
+== Learner checkpoint
+
+*Pass when:* you can explain why factory completion is not certification and why no external remediation path exists.

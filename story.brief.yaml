@@ -1,52 +1,74 @@
 version: 1
 blueprint: demo-blueprint.yaml
 presentation:
-  title: "Agentic AI 601 — Earn the Right to Act"
-  audience: Technical and business decision makers
-  desired_decision: Approve a measured Red Hat and Intel proof of value
+  title: Agentic AI 601 — Earn the Right to Act
+  audience: Platform leaders, SREs, security reviewers, and AI governance teams
+  desired_decision: Approve only one class-specific, reversible authority envelope supported by complete evidence and human review.
   duration_minutes: 7
-  core_tension: AI ambition is moving faster than operational confidence
-  cta: Choose one workload and prove it on the target platform
-
+  core_tension: A useful recommendation is not permission to mutate a system.
+  cta: Review the qualification record and keep production execution disabled until prerequisites and independent certification are complete.
 source_material:
-  mode: repository
+  mode: repository-and-research-charter
   items:
-    - "/Users/jkershaw/Documents/agent-promotion"
-    - demo-blueprint.yaml
+    - /Users/jkershaw/Documents/agent-promotion
+    - /Users/jkershaw/Documents/stargate-platform
+    - /Users/jkershaw/Documents/governed-cognitive-loop
+    - /Users/jkershaw/Documents/agent-passport
+    - /Users/jkershaw/Documents/are-immutable-ledger
+    - /Users/jkershaw/Documents/OpenShell
   consequential_assumptions:
-    - Discovery candidates remain unverified until reviewed against source artifacts and live behavior.
-
+    - Agentic AI 401 and 501 certification are hard prerequisites for any real 601 execution authority.
+    - GCL, agent passport, immutable ledger, and rossoctl remain research concepts here.
+    - OpenShell remains an upstream alpha and OpenShift AI Developer Preview integration, not a production control claim.
 architecture:
-  actors: []
-  boundaries: []
-  critical_flows: []
-  omitted_from_main_story: []
-
+  actors: [learner, reviewer]
+  boundaries: [namespace-boundary, authority-boundary, research-boundary]
+  critical_flows: [earned-authority-loop]
+  omitted_from_main_story:
+    - External production remediation targets
+    - Unsupported product mappings and invented performance values
+    - Any model or Intel hardware identity not observed in the current session
 beats:
   - beat: ordinary-world
-    claim: Teams can prototype AI faster than they can operationalize it.
+    claim: Teams can build recommendations faster than they can justify execution authority.
   - beat: stakes
-    claim: Unmeasured assumptions create cost and delivery risk.
+    claim: Confidence-driven action can expand blast radius without proving scope, reversibility, or validation.
+  - beat: root-cause
+    claim: Authority must bind evidence, class, runbook, target, environment, approval, and consequence.
   - beat: system-reveal
-    claim: A right-sized platform makes the decision observable.
+    claim: The loop separates signal, deterministic decision, bounded simulation, independent validation, rollback, and offline learning.
   - beat: live-proof
-    claim: The configured workload can produce a measured result.
+    claim: The rehearsal service produces distinct observe, recommend, simulate, rollback, and demotion results through one path.
+  - beat: tradeoffs
+    claim: Missing prerequisites, policy, evidence, scope, or approval produce denial rather than guessed authority.
   - beat: transformation
-    claim: The audience can decide from evidence instead of architecture promises.
-
+    claim: The outcome is one narrow, temporary, revocable authority envelope—not autonomous control.
 evidence:
-  - id: example-proof
-    claim: The demonstration returns a measured result.
+  - id: local-rehearsal-loop
+    claim: The contract service exercises the complete closed-loop qualification path against synthetic state.
     classification: rehearsal-fixture
-    source: public/fixtures/demo-proof.json
-    owner: Demo author
-    last_verified: null
-    treatment: Show with a REHEARSAL badge until the live endpoint succeeds.
-
-live_systems: []
+    source: server/engine.ts and server tests
+    owner: Agentic AI 601 factory candidate
+    last_verified: "2026-09-28"
+    treatment: Always display REHEARSAL and synthetic-only; never imply production remediation.
+  - id: product-boundary
+    claim: OpenShell secure agent onboarding is Developer Preview and unsupported for production in OpenShift AI 3.5.
+    classification: verified-fact
+    source: Red Hat OpenShift AI Self-Managed 3.5 release notes
+    owner: Red Hat documentation
+    last_verified: "2026-09-28"
+    treatment: Display as optional research integration only.
+live_systems:
+  - id: qualification-service
+    endpoint: /api/v1/loop/run
+    timeout_ms: 8000
+    source_states: [rehearsal, offline]
+    required_fields: [correlationId, idempotencyKey, signal, decision, action, validation, learning, authority, recordHash]
 journey:
-  presentation: 5–7 minute decision story with no more than seven scenes
-  live_demonstration: 5–10 minute proof in the operator or system workspace
-  guided_demo: 20–35 minute instructor-led architecture and evidence trace
-  hands_on_lab: 60–90 minute build, failure, qualification, and takeaway artifact
-open_questions: []
+  presentation: Seven-minute decision story with seven top-level scenes
+  live_demonstration: Run the source-labeled synthetic loop and change validation outcome
+  guided_demo: Inspect policy order, authority envelope, evidence chain, denial, rollback, and emergency stop
+  hands_on_lab: Build and qualify one safe synthetic condition and reversible runbook
+open_questions:
+  - Which supported target and release will independently qualify the optional isolation boundary?
+  - What class-specific evaluation thresholds will the human review board approve after prerequisite certification?

@@ -230,6 +230,10 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .live-workspace .journey-controls { margin-top: auto; justify-content: flex-end; }
 .live-workspace-context { display: flex; flex-direction: column; gap: .5rem; padding: 1rem; border-left: 1px solid var(--border); background: #191919; }
 .live-workspace-context p, .live-workspace-context small { color: var(--text-dim); font-size: .68rem; line-height: 1.45; }
+.journey-history { display: grid; gap: .35rem; }
+.journey-history div { display: grid; gap: .08rem; padding: .35rem .45rem; border-left: 2px solid var(--success); background: var(--surface-2); }
+.journey-history b { font-size: .63rem; }
+.journey-history span { color: var(--text-dim); font: .55rem 'Red Hat Mono'; text-transform: uppercase; }
 .live-workspace-context small { margin-top: auto; padding: .7rem; border-left: 2px solid var(--intel-cyan); background: var(--surface-2); }
 .live-topology-drawer { position: fixed; inset: 58px 0 0; z-index: 20; display: grid; align-content: center; padding: 3rem; background: rgba(21, 21, 21, .97); }
 .live-topology-drawer .technical-topology { width: min(1100px, 100%); margin: auto; }

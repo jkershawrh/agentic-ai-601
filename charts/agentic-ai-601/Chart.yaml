@@ -1,0 +1,6 @@
+apiVersion: v2
+name: agentic-ai-601
+description: Research presentation and synthetic earned-authority qualification service; certification remains external.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
