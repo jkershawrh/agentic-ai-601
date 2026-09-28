@@ -1,0 +1,26 @@
+api_version: launchpad.redhat.com/v1alpha1
+kind: CatalogCertificationProposal
+metadata:
+  catalog_item_id: agentic-ai-601
+  status: draft
+spec:
+  current_stage: factory-development-verified
+  certified: false
+  promotion_eligible: false
+  orderable: false
+  production_execution_enabled: false
+  max_workshop_seats: 0
+  prerequisites:
+    agentic_ai_401_certified: false
+    agentic_ai_501_certified: false
+  required_independent_gates:
+    - prerequisite-certification
+    - trusted-render-review
+    - artifact-and-destination-qualification
+    - one-seat-live-certification
+    - five-seat-certification
+    - twenty-five-seat-certification
+    - reclaim-zero-residue
+    - human-authority-review
+  promotion_sequence: [1, 5, 25]
+  blocker_policy: Production action, catalog orderability, promotion, and publication remain disabled until every prerequisite and independent gate passes.

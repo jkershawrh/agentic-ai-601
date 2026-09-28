@@ -1,0 +1,60 @@
+{
+  "schema_version": "launchpad.redhat.com/artifact-release-evidence/v1",
+  "component": "agentic-ai-601-qualifier",
+  "source": {
+    "repository": "https://github.com/jkershawrh/agentic-ai-601",
+    "revision": "d88f12ebf1e8a20582cb9324c7369063294b3d4c",
+    "tree_dirty": false
+  },
+  "image": "ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223",
+  "architectures": ["linux/amd64"],
+  "build": {
+    "builder_identity": "https://github.com/jkershawrh/agentic-ai-601/.github/workflows/release.yml@refs/heads/main",
+    "workflow_url": "https://github.com/jkershawrh/agentic-ai-601/actions/runs/36488877926",
+    "completed_at": "2026-09-28T21:54:10Z"
+  },
+  "checks": {
+    "vulnerability_scan": {
+      "status": "passed",
+      "evidence": ["release job 109152571000 step Reject HIGH or CRITICAL vulnerabilities"],
+      "subject_image": "ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223",
+      "critical_findings": 0,
+      "high_findings": 0
+    },
+    "sbom": {
+      "status": "passed",
+      "evidence": ["GitHub Actions artifact 11000596026"],
+      "subject_image": "ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223",
+      "artifact": "https://github.com/jkershawrh/agentic-ai-601/actions/runs/36488877926/artifacts/11000596026",
+      "sha256": "6e643e270691c66de4f56bd21a84d59fcd8c84fc7543e6fc117447ae2857a11c"
+    },
+    "signature": {
+      "status": "passed",
+      "evidence": ["release job 109152571000 step Verify Sigstore signature and provenance attestation"],
+      "identity": "https://github.com/jkershawrh/agentic-ai-601/.github/workflows/release.yml@refs/heads/main",
+      "subject_image": "ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223",
+      "verified": true
+    },
+    "provenance": {
+      "status": "passed",
+      "evidence": ["Sigstore SLSA v1 attestation verified in release job 109152571000"],
+      "artifact": "evidence/qualifier-provenance-predicate.json",
+      "sha256": "257f4903b9713d392f31986e4d0cb57133d9adba168bf1422552b8cea80d7d1c",
+      "subject_image": "ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223",
+      "source_repository": "https://github.com/jkershawrh/agentic-ai-601",
+      "source_revision": "d88f12ebf1e8a20582cb9324c7369063294b3d4c",
+      "builder_identity": "https://github.com/jkershawrh/agentic-ai-601/.github/workflows/release.yml@refs/heads/main",
+      "verified": true
+    },
+    "license_policy": {
+      "status": "passed",
+      "evidence": ["SPDX inventory produced for exact digest; docs/release-governance.md makes unknown or incompatible evidence promotion-blocking"]
+    },
+    "retention": {
+      "status": "passed",
+      "evidence": ["GitHub artifact expires 2026-12-27; docs/release-governance.md requires current plus two prior successful SHA releases"],
+      "protected_until": "2026-12-27T21:51:56Z",
+      "rollback_releases_retained": 3
+    }
+  }
+}

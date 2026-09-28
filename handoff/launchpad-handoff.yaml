@@ -1,0 +1,117 @@
+schema_version: demo-story.redhat-intel.com/launchpad-handoff/v1
+factory_receipt:
+  identity:
+    catalog_item_id: agentic-ai-601
+    display_name: "Agentic AI 601 — Earn the Right to Act"
+    proposed_track: agentic_ai
+    proposed_learning_level: "601"
+  authority:
+    orderable: false
+    certified: false
+    promotion_eligible: false
+    may_modify_launchpad_catalog: false
+    may_provision: false
+    may_publish: false
+  presentation_source:
+    repository: https://github.com/jkershawrh/agentic-ai-601
+    revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+    tree_dirty: false
+  artifacts:
+    workload:
+      image: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+      architecture: linux/amd64
+      source_repository: https://github.com/jkershawrh/agentic-ai-601
+      source_revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+      release_receipt: {path: evidence/workload-artifact-release.json, sha256: e953aa672ddce442a5118f722111a0b6ba483b349de31bb2bb434e565df66930}
+    presentation:
+      image: ghcr.io/jkershawrh/agentic-ai-601-presentation@sha256:3fac7a38520699eaff96e25bbbff6c311a1e509133f8c4f19ee9843600d0bdcc
+      architecture: linux/amd64
+      source_repository: https://github.com/jkershawrh/agentic-ai-601
+      source_revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+      release_receipt: {path: evidence/presentation-artifact-release.json, sha256: 376ea4f49a7de7551abd4c8e199050e903ade6e56339f1f78fcdf084083e4bea}
+    showroom_content:
+      repository: https://github.com/jkershawrh/agentic-ai-601
+      revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+      bundle_digest: sha256:80c0db0d8cb958617a90359d6629105869db3bb7125850ff07e1dc0c0d433ee0
+  factory_evidence:
+    development_journey: {path: evidence/factory-development-journey.json, sha256: bbd2f3941cdba0ed01141c64f23a9324a120db8fc0981e1f6a152b0824bafcf7}
+    presentation_verification: {path: evidence/presentation-verification.json, sha256: 3f16b79e8a6e36b3124b078f52151f2518072d70544b12eefe0bc165cdbd27dd}
+    zero_residue: {path: evidence/factory-zero-residue.json, sha256: 840c3fca46955a71cd738fa64dd537406d5f50fbfadf198e5086ab1b9748e60c}
+  contracts:
+    demo_blueprint: demo-blueprint.yaml
+    story_brief: story.brief.yaml
+    validation_matrix: tests/validation_matrix.yaml
+    claim_registry: tests/claim_registry.yaml
+    benchmark_rubric: tests/benchmark_rubric.yaml
+  known_blockers:
+    - Agentic AI 401 is not certified.
+    - Agentic AI 501 is not certified.
+    - Production execution authority is disabled and external remediation is not implemented.
+    - Launchpad source approval, trusted render, artifact review, live-seat certification, scale graduation, reclaim, and promotion remain required.
+    - Supported OpenShift versions, registry destinations, and optional isolation boundaries require independent qualification.
+proposed_launchpad_intake:
+  api_version: launchpad.redhat.com/v1alpha1
+  catalog:
+    catalog_item_id: agentic-ai-601
+    display_name: "Agentic AI 601 — Earn the Right to Act"
+    description: "Factory-verified synthetic earned-authority lab awaiting prerequisite certification and independent Launchpad qualification."
+    category: guided_build
+    version: 0.1.0
+    status: draft
+  learning:
+    learning_level: "601"
+    learning_stage: Qualify
+    experience_type: system_qualification
+    prerequisites: [agentic-ai-401, agentic-ai-501]
+    recommended_next_items: []
+    journey_role: research_charter
+    specialty_family: earned_authority
+    branches_from: agentic-ai-501
+    returns_to: null
+    shared_blueprint: red-hat-intel-agentic-v1
+    solution_family: agentic_ai
+  sources:
+    showroom: {repo_url: https://github.com/jkershawrh/agentic-ai-601, revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, playbook: site.yml, start_path: showroom}
+    workload: {repo_url: https://github.com/jkershawrh/agentic-ai-601, revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c, deploy_path: charts/agentic-ai-601}
+  runtime:
+    deployment_type: helm
+    deployment_class: shared_namespace
+    deployment_scope: participant_namespace
+    supported_architectures: [linux/amd64]
+    supported_openshift_versions: [review-required]
+    required_operators: []
+    required_capabilities: [openshift, showroom]
+    required_models: []
+    exposure_policy: internal
+    ingress: participant-presentation-route-and-same-namespace-qualifier
+    egress: none
+    cluster_scoped_resources: false
+    cleanup_owner: launchpad-workshop-reclaim
+    workload:
+      helm_values:
+        workload_image: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+        presentation_image: ghcr.io/jkershawrh/agentic-ai-601-presentation@sha256:3fac7a38520699eaff96e25bbbff6c311a1e509133f8c4f19ee9843600d0bdcc
+        presentation_enabled: true
+        authority_execution_enabled: false
+    resources:
+      steady_per_seat: {cpu_millicores: 125, memory_mib: 160, pods: 2, storage_gib: 1}
+      peak_per_seat: {cpu_millicores: 1250, memory_mib: 640, pods: 2}
+      workshop_shared: {cpu_millicores: 0, memory_mib: 0, pods: 0, storage_gib: 0}
+      provisioning_concurrency: 1
+      observed_largest_run: 1
+      safety_margin_percent: 20
+    tabs:
+      - {id: story, title: Story, source: presentation.route, path: /}
+      - {id: guide, title: Lab Guide, source: showroom.guide}
+      - {id: terminal, title: Terminal, source: showroom.terminal}
+      - {id: workspace, title: Qualification Workspace, source: workload.service, path: /api/v1/status}
+      - {id: openshift-console, title: OpenShift Console, source: cluster.console_url}
+    readiness_checks: [presentation-health, qualifier-health, execution-authority-disabled, complete-synthetic-journey]
+  certification_proposal:
+    stage: factory-development-verified
+    max_workshop_seats: 1
+    promotion_sequence: [1, 5, 25]
+    proof_contract_draft: handoff/catalog-certification.proposed.yaml
+    launchpad_evidence_required: [prerequisite-certification, trusted-render-review, artifact-and-destination-qualification, one-seat-certification, five-seat-certification, twenty-five-seat-certification, reclaim-zero-residue, human-authority-review]
+  requested_pipeline_actions: [approve_source, run_discovery]
+  subsequent_independent_gates: [generate_draft, trusted_render_review, artifact_review, run_one_seat_certification, request_review, scale_certification, reclaim_zero_residue, human_authority_review, promote]

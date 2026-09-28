@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "agentic-ai-601/factory-development-journey/v1",
+  "status": "passed-rehearsal",
+  "sourceRevision": "d88f12ebf1e8a20582cb9324c7369063294b3d4c",
+  "contractFirstHistory": {
+    "redCommit": "f686e4b77a750200722aa9297f2147207c5b028f",
+    "redResult": "3 contract tests failed because the authority contracts did not exist",
+    "greenCommit": "e03356122cfd18466edc429992ca6020bf114350",
+    "greenResult": "32 presentation tests and 35 qualification-service tests passed"
+  },
+  "journey": {
+    "loop": ["Signal", "Decision", "Action", "Validate", "Learn"],
+    "authorityLadder": ["Observe", "Recommend", "Shadow", "Human approval", "Bounded action", "Validate or rollback", "Learn", "Suspend or demote"],
+    "scenario": "validation_failure",
+    "namespace": "agentic-ai-601-lab-factory",
+    "action": "one simulated workload.restart against one synthetic target",
+    "validationPassed": false,
+    "rollbackTriggered": true,
+    "rollbackPassed": true,
+    "demotionTriggered": true,
+    "productionExecutionAuthority": false,
+    "emergencyStop": "human override passed and retained productionExecutionAuthority=false"
+  },
+  "measuredSingleSeatSample": {
+    "host": "local Podman, Linux AMD64 images under ARM64 emulation",
+    "presentation": {"cpuPercentSnapshot": 1.93, "memoryMB": 13.91, "pids": 7},
+    "qualifier": {"cpuPercentSnapshot": 9.37, "memoryMB": 50.68, "pids": 7},
+    "podsOrContainers": 2,
+    "modelRequests": 0,
+    "modelTokens": 0,
+    "modelConcurrency": 0,
+    "largestObservedSeats": 1,
+    "provisioningConcurrency": 1,
+    "proposedSafetyMarginPercent": 20
+  },
+  "limitations": [
+    "This is factory rehearsal evidence, not OpenShift or Launchpad live-seat certification.",
+    "No model endpoint, production target, external remediation, or production credential was used."
+  ]
+}

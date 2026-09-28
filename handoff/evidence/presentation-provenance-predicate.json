@@ -1,0 +1,31 @@
+{
+  "buildDefinition": {
+    "buildType": "https://github.com/Attestations/GitHubActionsWorkflow@v1",
+    "externalParameters": {
+      "workflow": {
+        "ref": "jkershawrh/agentic-ai-601/.github/workflows/release.yml@refs/heads/main",
+        "repository": "https://github.com/jkershawrh/agentic-ai-601"
+      }
+    },
+    "internalParameters": {
+      "image": "ghcr.io/jkershawrh/agentic-ai-601-presentation",
+      "platform": "linux/amd64"
+    },
+    "resolvedDependencies": [
+      {
+        "uri": "git+https://github.com/jkershawrh/agentic-ai-601.git",
+        "digest": {
+          "gitCommit": "d88f12ebf1e8a20582cb9324c7369063294b3d4c"
+        }
+      }
+    ]
+  },
+  "runDetails": {
+    "builder": {
+      "id": "jkershawrh/agentic-ai-601/.github/workflows/release.yml@refs/heads/main"
+    },
+    "metadata": {
+      "invocationId": "https://github.com/jkershawrh/agentic-ai-601/actions/runs/36488877926/attempts/1"
+    }
+  }
+}

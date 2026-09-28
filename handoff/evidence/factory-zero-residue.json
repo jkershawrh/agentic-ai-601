@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "agentic-ai-601/factory-zero-residue/v1",
+  "status": "passed-local-rehearsal",
+  "sourceRevision": "d88f12ebf1e8a20582cb9324c7369063294b3d4c",
+  "scope": "two explicitly named local factory containers",
+  "removed": [
+    "agentic-ai-601-presentation-d88",
+    "agentic-ai-601-qualifier-d88"
+  ],
+  "remainingNamedFactoryContainers": 0,
+  "cleanupDurationSecondsUpperBound": 0.8,
+  "secretsCreated": 0,
+  "externalTargetsMutated": 0,
+  "productionCredentialsUsed": 0,
+  "limitation": "Launchpad must independently prove OpenShift namespace reclaim and zero residue."
+}

@@ -1,0 +1,20 @@
+api_version: launchpad.redhat.com/v1alpha1
+kind: CatalogOnboardingProposal
+metadata:
+  catalog_item_id: agentic-ai-601
+  status: draft
+spec:
+  repository: https://github.com/jkershawrh/agentic-ai-601
+  revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+  learning_level: "601"
+  prerequisites: [agentic-ai-401, agentic-ai-501]
+  prerequisite_state: incomplete
+  source_classes:
+    showroom: {playbook: site.yml, start_path: showroom}
+    workload: {deploy_path: charts/agentic-ai-601}
+  requested_actions: [approve_source, run_discovery]
+  authority:
+    may_modify_catalog: false
+    may_provision: false
+    may_publish: false
+    production_execution_enabled: false

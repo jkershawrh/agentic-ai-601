@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "agentic-ai-601/presentation-verification/v1",
+  "status": "passed",
+  "sourceRevision": "d88f12ebf1e8a20582cb9324c7369063294b3d4c",
+  "title": "Agentic AI 601 — Earn the Right to Act",
+  "scenes": 7,
+  "automatedTests": {"passed": 32, "failed": 0},
+  "visualChecks": {
+    "passed": 11,
+    "skipped": 1,
+    "skipReason": "mobile no-scroll is outside the desktop presentation acceptance contract",
+    "desktopViewports": ["1920x1080", "1440x900"],
+    "desktopScrollFailures": 0
+  },
+  "build": "passed",
+  "offlineAssets": "passed",
+  "rehearsalLabel": "present",
+  "closeControl": "present",
+  "singleLabHandoff": "present",
+  "manualReview": ["opening scene", "architecture scene", "live-proof scene"]
+}
