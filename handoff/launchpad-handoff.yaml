@@ -109,7 +109,7 @@ proposed_launchpad_intake:
     readiness_checks: [presentation-health, qualifier-health, execution-authority-disabled, complete-synthetic-journey]
   certification_proposal:
     stage: factory-development-verified
-    max_workshop_seats: 1
+    max_workshop_seats: 0
     promotion_sequence: [1, 5, 25]
     proof_contract_draft: handoff/catalog-certification.proposed.yaml
     launchpad_evidence_required: [prerequisite-certification, trusted-render-review, artifact-and-destination-qualification, one-seat-certification, five-seat-certification, twenty-five-seat-certification, reclaim-zero-residue, human-authority-review]
