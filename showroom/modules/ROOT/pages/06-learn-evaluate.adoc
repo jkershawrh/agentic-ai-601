@@ -1,18 +1,71 @@
 = 6. Learn and evaluate
 
+== What you will learn
+
+* How to verify a complete, hash-linked evidence chain.
+* How class-specific evaluation informs human review.
+* Why learning cannot rewrite policy or authority.
+
 == Objective
 
 Review the complete evidence chain and apply class-specific evaluation without self-modifying policy.
 
-[source,bash]
+== See: verify the evidence chain
+
+[source,bash,role="execute"]
 ----
-curl -fsS http://qualification:8080/api/v1/evidence/verify
+curl -fsS http://qualification:8080/api/v1/evidence/verify | python3 -m json.tool
 ----
 
 The result must be `valid: true`. Compare the record fields with `contracts/evidence-record.schema.json`. Learning appends reviewer disposition and evaluation-set identity; it does not rewrite policy, thresholds, the allowlist, or authority.
 
 Evaluate precision, recall, extraction accuracy, calibration error, abstention quality, policy compliance, validation success, recovery, and unauthorized actions by condition class and consequence.
 
+=== Review lens
+
+* Every record is hash-linked and schema-valid.
+* Evaluation-set identity remains immutable.
+* Precision and recall are condition-class specific.
+* Calibration and abstention remain visible.
+* Policy compliance has safety priority.
+* Unauthorized action count must remain zero.
+* Validation and recovery are evaluated independently.
+* Learning appends evidence rather than rewriting controls.
+* Promotion remains a human disposition.
+
+=== Evidence to retain
+
+* chain-verification result;
+* evidence-record count;
+* evaluation-set identity;
+* condition-class metrics;
+* policy-compliance result;
+* unauthorized-action count;
+* recovery result;
+* reviewer disposition.
+
+== Verify
+
+Confirm `valid: true` and trace the evidence identifiers from signal through
+decision, authority, simulated action, validation or rollback, and learning.
+Check that every stage shares the intended correlation chain.
+
+Verify that the evaluation result cannot modify the policy order, allowlist,
+thresholds, or authority envelope. Confirm that the promotion recommendation
+remains false while prerequisites and human disposition are pending.
+
+Record any missing field as inconclusive instead of assigning a passing or
+failing numeric value.
+
 == Learner checkpoint
 
+Capture the chain verification result, evaluation-set identity, safety
+metrics, reviewer disposition, and promotion recommendation.
+
 *Pass when:* the hash link verifies and the promotion recommendation remains false pending human disposition and prerequisite certification.
+
+== Key takeaway
+
+Learning improves the reviewable evidence base; it does not self-modify the
+governance boundary. A valid chain supports judgment without granting the
+runtime authority over its own promotion.

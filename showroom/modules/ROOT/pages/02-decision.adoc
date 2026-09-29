@@ -1,13 +1,78 @@
 = 2. Decision
 
+== What you will learn
+
+* How deterministic policy separates recommendation from permission.
+* Why policy order is independent of model reasoning.
+* How missing approval produces a fail-closed decision.
+
 == Objective
 
 Use deterministic, deny-by-default policy to separate a recommendation from permission.
 
-Repeat the request with `requestedStage` set to `recommend`, then `shadow`. Both remain mutation-free: shadow evaluates the recommendation against the observed event but cannot execute it. Finally try `bounded_action` without an approval token; it returns `request_approval`.
+== See: compare recommend, shadow, and bounded-action requests
+
+[source,bash,role="execute"]
+----
+for stage in recommend shadow bounded_action; do
+  curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
+    -H 'content-type: application/json' \
+    -H "x-correlation-id: lab-${stage}-1" \
+    -H "idempotency-key: lab-${stage}-1" \
+    -d "{\"scenario\":\"restart_required\",\"requestedStage\":\"${stage}\",\"namespace\":\"agentic-ai-601-lab-user\"}"
+  echo
+done
+----
+
+Recommend and shadow remain mutation-free. Shadow evaluates the recommendation against the observed event but cannot execute it. Bounded action without an approval token returns `request_approval`.
 
 Review the fixed order in `contracts/deterministic-policy.v1.json`. Emergency stop, prerequisites, scope, allowlists, authority, approval, blast radius, concurrency, idempotency, and evidence are not model decisions.
 
+=== Review lens
+
+* Observe and recommend never attempt a target mutation.
+* Shadow evaluates the recommendation without execution.
+* Bounded action requires a valid approval token.
+* Emergency stop is evaluated before permission.
+* Prerequisites and scope are deterministic inputs.
+* Allowlists and blast radius constrain eligible targets.
+* Idempotency and concurrency protect execution semantics.
+* Evidence completeness is required for disposition.
+
+=== Evidence to retain
+
+* requested stage;
+* decision outcome;
+* deterministic reason;
+* approval requirement;
+* target-attempt count;
+* policy version;
+* correlation ID;
+* authority state.
+
+== Verify
+
+Confirm that recommend and shadow return mutation-free records and that the
+unapproved bounded-action request returns `request_approval`. Verify that every
+decision includes a deterministic reason rather than an unexplained model
+score.
+
+Record the difference between a recommendation, a shadow evaluation, and an
+authorized action. Identify the exact policy gate that denied the final
+request.
+
+Confirm that no response changes the prerequisites, authority ladder, target
+scope, or human ownership established during preflight.
+
 == Learner checkpoint
 
+Capture the three requested stages, their decision outcomes, action-attempt
+counts, and the deterministic reason for denial.
+
 *Pass when:* missing approval does not execute an action and the decision records a deterministic reason.
+
+== Key takeaway
+
+The model may help form a recommendation, but deterministic policy owns the
+permission boundary. Missing authority is a denial, never an invitation to
+guess.

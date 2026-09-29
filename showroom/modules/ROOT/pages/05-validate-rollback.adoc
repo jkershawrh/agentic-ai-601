@@ -1,13 +1,76 @@
 = 5. Validate and rollback
 
+== What you will learn
+
+* How independent validation controls disposition after an action.
+* Why failed validation triggers rollback and authority demotion.
+* Why emergency stop wins before any target attempt.
+
 == Objective
 
 Prove that failed validation causes rollback and demotion, and that the emergency stop wins before action.
 
-Run the `validation_failure` scenario with a new approval token and `simulation: true`. Verify `rollbackTriggered`, `rollbackPassed`, and `demotionTriggered` are true. Then run `kill_switch`; it must deny with `emergency_stop_active` and record zero attempts.
+== See: exercise validation failure and emergency stop
+
+[source,bash,role="execute"]
+----
+for scenario in validation_failure kill_switch; do
+  curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
+    -H 'content-type: application/json' \
+    -H "x-correlation-id: lab-${scenario}-1" \
+    -H "idempotency-key: lab-${scenario}-1" \
+    -d "{\"scenario\":\"${scenario}\",\"requestedStage\":\"bounded_action\",\"namespace\":\"agentic-ai-601-lab-user\",\"approvalToken\":\"approval-${scenario}-1\",\"simulation\":true}"
+  echo
+done
+----
+
+For `validation_failure`, verify `rollbackTriggered`, `rollbackPassed`, and `demotionTriggered` are true. For `kill_switch`, verify denial with `emergency_stop_active` and zero attempts.
 
 Validation evidence is logically independent of the action request. A claimed action success cannot override a failed observation.
 
+=== Review lens
+
+* Validation uses an independent observation.
+* Failed validation produces rollback.
+* Rollback success is separate from action success.
+* Failed validation demotes authority.
+* Emergency stop is evaluated before action permission.
+* Kill-switch denial records zero attempts.
+* Evidence retains one correlation chain.
+* Human review remains required after rollback.
+
+=== Evidence to retain
+
+* independent validation result;
+* rollback trigger and result;
+* demotion result;
+* emergency-stop decision;
+* target-attempt count;
+* correlation ID;
+* reviewer requirement;
+* resulting authority state.
+
+== Verify
+
+For `validation_failure`, confirm rollback and demotion are true and that
+action success does not erase the failed validation result.
+
+For `kill_switch`, confirm the reason is `emergency_stop_active`, target count
+and attempt count remain zero, and no approval can override the stop. Record
+both outcomes in the learner evidence chain.
+
+Confirm that rollback does not promote authority or clear the requirement for
+human review.
+
 == Learner checkpoint
 
+Record validation state, rollback state, demotion state, emergency-stop reason,
+and target attempts for both scenarios.
+
 *Pass when:* rollback succeeds, authority is demoted, and the kill switch prevents action before any target is touched.
+
+== Key takeaway
+
+Closed-loop safety depends on independent validation, automatic rollback and
+demotion, and an emergency stop that precedes all action logic. Claimed action
+success never outranks observed failure.

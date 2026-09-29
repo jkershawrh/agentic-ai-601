@@ -1,20 +1,73 @@
 = 1. Signal
 
+== What you will learn
+
+* How to create a stable and attributable synthetic signal.
+* Why observation must not imply mutation authority.
+* How correlation and idempotency establish evidence identity.
+
 == Objective
 
 Create a stable, source-labeled synthetic signal without granting mutation authority.
 
-[source,bash]
+== See: submit an observation-only signal
+
+[source,bash,role="execute"]
 ----
 curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
   -H 'content-type: application/json' \
   -H 'x-correlation-id: lab-signal-1' \
   -H 'idempotency-key: lab-signal-1' \
-  -d '{"scenario":"restart_required","requestedStage":"observe","namespace":"agentic-ai-601-lab-user"}'
+  -d '{"scenario":"restart_required","requestedStage":"observe","namespace":"agentic-ai-601-lab-user"}' \
+  | python3 -m json.tool
 ----
 
 Inspect provenance, condition class, taxonomy version, and authority stage. Confidence is intentionally absent because no model ran.
 
+=== Review lens
+
+* The correlation ID joins the request and evidence record.
+* The idempotency key prevents duplicate processing.
+* The condition class is `synthetic.pod_unhealthy`.
+* The taxonomy version makes classification reproducible.
+* The requested stage is observation only.
+* No model confidence is fabricated.
+* No action target or approval is present.
+* The source remains REHEARSAL.
+
+=== Evidence to retain
+
+* correlation ID;
+* idempotency key;
+* condition class;
+* taxonomy version;
+* source classification;
+* authority stage;
+* target-attempt count;
+* record identifier.
+
+== Verify
+
+Repeat the request with the same correlation and idempotency keys. Confirm that
+the service returns the same logical record rather than creating a second
+signal or action attempt.
+
+Check that the evidence records zero target attempts, zero unauthorized
+actions, and no behavioral authority. Capture the record identifier and
+condition class in the learner record for later stages.
+
+Compare the observation with the preflight response. The source, namespace,
+prerequisite, and authority boundaries must remain unchanged after a signal is
+accepted.
+
 == Learner checkpoint
 
+Write the correlation ID, idempotency key, condition class, taxonomy version,
+source classification, and action-attempt count.
+
 *Pass when:* the evidence identifies `synthetic.pod_unhealthy`, reports REHEARSAL source state, and records no action attempt.
+
+== Key takeaway
+
+A useful signal is attributable, repeatable, and authority-free. Observation
+starts the evidence chain; it does not grant permission to change anything.

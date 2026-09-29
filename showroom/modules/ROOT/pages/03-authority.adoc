@@ -1,13 +1,77 @@
 = 3. Authority
 
+== What you will learn
+
+* How authority is scoped independently from workload identity.
+* Why approvals must expire, remain single-use, and be revocable.
+* Why evaluation quality cannot promote authority automatically.
+
 == Objective
 
 Define an authority envelope that is narrow, human-owned, expiring, single-use, and revocable.
 
+== See: challenge a single-use approval
+
+[source,bash,role="execute"]
+----
+for key in authority-first authority-reuse; do
+  curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
+    -H 'content-type: application/json' \
+    -H "x-correlation-id: ${key}" \
+    -H "idempotency-key: ${key}" \
+    -d '{"scenario":"restart_required","requestedStage":"bounded_action","namespace":"agentic-ai-601-lab-user","approvalToken":"approval-single-use","simulation":true}'
+  echo
+done
+----
+
 Inspect `contracts/authority-ladder.v1.json` and `contracts/evaluation-matrix.v1.json`. Promotion applies only to one condition class, runbook, target class, environment, and blast radius. Aggregate accuracy cannot promote. Draft evaluation thresholds require human approval.
 
-Use the same approval token twice with different idempotency keys. The second use must be denied as `approval_token_already_used`.
+The second use of the same approval token with a different idempotency key must be denied as `approval_token_already_used`.
+
+=== Review lens
+
+* Condition class and runbook are explicitly scoped.
+* Target class and environment cannot silently expand.
+* Blast radius and concurrency remain bounded.
+* Approval has an issuer, lifetime, and revocation state.
+* Single-use semantics prevent replay.
+* Workload identity does not imply behavioral authorization.
+* Aggregate accuracy cannot grant authority.
+* Human review owns promotion for each condition class.
+
+=== Evidence to retain
+
+* approval issuer and identifier;
+* condition and runbook scope;
+* environment and target class;
+* blast radius and concurrency;
+* expiration and revocation state;
+* first-use outcome;
+* replay-denial outcome;
+* promotion owner.
+
+== Verify
+
+Confirm that the first simulated request consumes the approval and that the
+second request is denied as `approval_token_already_used`. Verify that changing
+an idempotency key does not make a consumed approval valid again.
+
+Record which fields bind the approval to its condition, action, environment,
+target class, and blast radius. Note that draft thresholds remain insufficient
+for promotion.
+
+Confirm that authority remains disabled for external execution even when the
+synthetic bounded-action request is accepted.
 
 == Learner checkpoint
 
+List the authority-envelope fields, approval lifetime and replay behavior,
+condition-class boundary, and final promotion owner.
+
 *Pass when:* you can distinguish workload identity from behavioral authorization and show that the agent cannot promote itself.
+
+== Key takeaway
+
+Authority is a narrow, temporary, reviewable envelope—not a property of the
+agent binary. Successful evaluation can inform a human decision but cannot
+expand that envelope on its own.

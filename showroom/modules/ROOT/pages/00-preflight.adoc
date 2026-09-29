@@ -1,18 +1,71 @@
 = 0. Preflight
 
+== What you will learn
+
+* How factory evidence differs from destination certification.
+* Which prerequisite and authority gates must fail closed.
+* How research concepts are separated from product capabilities.
+
 == Objective
 
 Confirm the source state, disabled production authority, synthetic namespace boundary, and research labels before running anything.
 
-[source,bash]
+== See: inspect the admitted runtime state
+
+[source,bash,role="execute"]
 ----
-curl -fsS http://qualification:8080/api/v1/status
+curl -fsS http://qualification:8080/api/v1/status | python3 -m json.tool
 ----
 
 Verify `sourceState` is `rehearsal`, `executionAuthorityEnabled` is `false`, and both prerequisite certifications are `false`.
 
 GCL, agent passport, immutable ledger, and `rossoctl` are research concepts. OpenShell is an upstream alpha / OpenShift AI Developer Preview integration and is not a production control in this lab.
 
+=== Review lens
+
+* `sourceState` identifies rehearsal rather than live evidence.
+* `executionAuthorityEnabled` remains false.
+* Agentic AI 401 and 501 prerequisites remain explicit.
+* The namespace boundary permits no external target.
+* Research labels cannot be presented as product features.
+* The runtime cannot certify or promote itself.
+* Human review remains required.
+
+=== Evidence to retain
+
+* status response timestamp;
+* source classification;
+* prerequisite states;
+* execution-authority state;
+* participant namespace boundary;
+* allowed condition class;
+* research labels;
+* absent external target;
+* named human reviewer.
+
+== Verify
+
+Record the returned source state, prerequisite state, authority state, allowed
+condition class, and namespace boundary. Treat an absent or unknown value as a
+failed preflight rather than a default approval.
+
+Confirm that no credential, target address, external remediation adapter, or
+production authority appears in the response. The participant is evaluating a
+synthetic governed loop, not operating a customer environment.
+
+Inspect the status twice and confirm that a read-only check does not change the
+evidence chain, authority state, or target state. Preserve the response with
+the learner record for the final handoff.
+
 == Learner checkpoint
 
+Record the evidence source, two unmet prerequisites, current authority state,
+namespace boundary, and final decision owner.
+
 *Pass when:* you can explain why factory completion is not certification and why no external remediation path exists.
+
+== Key takeaway
+
+The first safety control is refusing to run when source, prerequisites, scope,
+or authority are unclear. Factory-green software has not yet earned destination
+execution authority.

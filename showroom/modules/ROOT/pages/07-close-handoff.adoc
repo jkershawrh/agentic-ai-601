@@ -1,13 +1,75 @@
 = 7. Close and handoff
 
+== What you will learn
+
+* How to package a truthful non-certified factory receipt.
+* How to preserve blockers, ownership, and immutable provenance.
+* How independent Launchpad gates convert a package into an orderable lab.
+
 == Objective
 
 Package an honest, non-certified factory receipt for independent Launchpad review.
+
+== See: inspect the fail-closed handoff
+
+[source,bash,role="execute"]
+----
+python3 - <<'PY'
+import yaml
+d = yaml.safe_load(open('handoff/launchpad-handoff.yaml'))
+a = d['factory_receipt']['authority']
+print({k: a[k] for k in ('orderable', 'certified', 'promotion_eligible')})
+PY
+----
 
 Confirm the handoff declares `orderable: false`, `certified: false`, `promotion_eligible: false`, and `execution_authority_enabled: false`. No target environment or Launchpad state was changed. Automated promotion is false.
 
 The remaining blockers are genuine: 401 certification, 501 certification, target and release approval, class-specific thresholds, live one-seat proof, capacity and reclaim graduation, artifact verification, and human promotion approval.
 
+=== Handoff inventory
+
+* immutable source revision;
+* digest-pinned presentation and qualification images;
+* factory development and presentation evidence;
+* zero-residue factory evidence;
+* versioned authority, policy, action, and evidence contracts;
+* standard validation matrix, claim registry, and benchmark rubric;
+* explicit prerequisite and destination blockers;
+* named independent promotion authority.
+
+=== Evidence to retain
+
+* immutable source revision;
+* image digests;
+* factory evidence hashes;
+* prerequisite blockers;
+* destination-certification state;
+* cleanup statement;
+* next owner;
+* next gate.
+
+== Verify
+
+Confirm the receipt reports `orderable: false`, `certified: false`, and
+`promotion_eligible: false`. Confirm that the source revisions and image
+digests are immutable and that no secret value appears in the handoff.
+
+Check that 401 and 501 certification, trusted destination rendering, artifact
+review, one-seat and five-seat proof, reclaim with zero residue, and human
+promotion remain explicit. A factory receipt cannot waive those gates.
+
+Verify that the cleanup statement accurately says no destination state was
+changed during this rehearsal journey.
+
 == Learner checkpoint
 
+Record the immutable revision, artifact digests, evidence package, unmet
+prerequisites, cleanup state, next owner, and next gate.
+
 *Pass when:* the final artifact states what was proven, what remains REHEARSAL, and which independent authority must act next.
+
+== Key takeaway
+
+A trustworthy handoff makes the package reviewable without making it
+orderable. Launchpad certification and human authority must be earned from
+destination evidence, not inherited from the source factory.

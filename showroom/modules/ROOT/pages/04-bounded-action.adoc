@@ -1,20 +1,73 @@
 = 4. Bounded action
 
+== What you will learn
+
+* How an approved action remains bounded and simulated.
+* How idempotency makes duplicate delivery harmless.
+* Which evidence proves that external execution stayed disabled.
+
 == Objective
 
 Exercise one approved, idempotent, reversible action simulation without reaching an external target.
 
-[source,bash]
+== See: run one bounded simulation
+
+[source,bash,role="execute"]
 ----
 curl -fsS -X POST http://qualification:8080/api/v1/loop/run \
   -H 'content-type: application/json' \
   -H 'x-correlation-id: lab-action-1' \
   -H 'idempotency-key: lab-action-1' \
-  -d '{"scenario":"restart_required","requestedStage":"bounded_action","namespace":"agentic-ai-601-lab-user","approvalToken":"approval-lab-action-1","simulation":true}'
+  -d '{"scenario":"restart_required","requestedStage":"bounded_action","namespace":"agentic-ai-601-lab-user","approvalToken":"approval-lab-action-1","simulation":true}' \
+  | python3 -m json.tool
 ----
 
 Confirm one target, one attempt, synthetic simulation, and `executionAuthorityEnabled: false`. Repeating the same idempotency key must return the same record rather than a second attempt.
 
+=== Review lens
+
+* The scenario and condition class are allowlisted.
+* The namespace is synthetic and participant-scoped.
+* Target count is exactly one.
+* Concurrency is exactly one.
+* The approval token is specific and single-use.
+* Simulation is explicitly true.
+* Execution authority remains false.
+* Duplicate delivery returns the original result.
+
+=== Evidence to retain
+
+* action identifier;
+* simulated target;
+* target count;
+* attempt count;
+* concurrency bound;
+* approval reference;
+* replay outcome;
+* external-authority state.
+
+== Verify
+
+Repeat the exact request and confirm that the evidence identifies a replay of
+the original logical operation, not another target attempt. Compare the action
+identifier, attempt count, and evidence hash.
+
+Confirm that the response contains no external target, cluster credential, or
+production mutation. Record the bounded scope and the evidence that would be
+required before a real adapter could ever be admitted.
+
+Compare the result with the authority envelope from the previous stage. Every
+scope field must remain inside the approved synthetic boundary.
+
 == Learner checkpoint
 
+Record target count, concurrency, attempt count, simulation state, replay
+behavior, and production-authority state.
+
 *Pass when:* target count and concurrency remain one, duplicate delivery is harmless, and production authority remains disabled.
+
+== Key takeaway
+
+Bounded action combines explicit approval, narrow scope, idempotency,
+reversibility, and evidence. This lab proves those semantics with a simulation;
+it does not claim production remediation authority.
