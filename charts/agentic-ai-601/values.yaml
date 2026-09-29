@@ -6,6 +6,9 @@ images:
     repository: ghcr.io/jkershawrh/agentic-ai-601-qualifier
     digest: sha256:0000000000000000000000000000000000000000000000000000000000000000
 imagePullPolicy: IfNotPresent
+routes:
+  enabled: true
+  ingressDomain: apps.flightpath.fm2aihpcsed.com
 presentation:
   replicas: 1
   resources:
@@ -20,4 +23,4 @@ qualifier:
     limits: { cpu: "1", memory: 512Mi }
 networkPolicy:
   enabled: true
-  allowSameNamespaceOnly: true
+  ingressNamespaceSelector: {}

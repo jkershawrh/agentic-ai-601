@@ -1,0 +1,37 @@
+{{- if .Values.routes.enabled }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Release.Name }}-presentation
+  labels:
+    {{- include "agentic-ai-601.labels" . | nindent 4 }}
+    app.kubernetes.io/component: presentation
+spec:
+  host: {{ printf "a601p-%s.%s" (trunc -8 .Release.Namespace) .Values.routes.ingressDomain }}
+  to:
+    kind: Service
+    name: {{ .Release.Name }}-presentation
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Release.Name }}-qualifier
+  labels:
+    {{- include "agentic-ai-601.labels" . | nindent 4 }}
+    app.kubernetes.io/component: qualifier
+spec:
+  host: {{ printf "a601q-%s.%s" (trunc -8 .Release.Namespace) .Values.routes.ingressDomain }}
+  to:
+    kind: Service
+    name: {{ .Release.Name }}-qualifier
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+{{- end }}
