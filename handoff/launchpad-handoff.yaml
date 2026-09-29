@@ -14,7 +14,7 @@ factory_receipt:
     may_publish: false
   presentation_source:
     repository: https://github.com/jkershawrh/agentic-ai-601
-    revision: 42026ad432fa4fdcdbe3b03834fc950bd339cf68
+    revision: a40f01396adcccdb93c240b8c5b5b45cf418c317
     tree_dirty: false
   artifacts:
     workload:
@@ -31,8 +31,8 @@ factory_receipt:
       release_receipt: {path: evidence/presentation-artifact-release.json, sha256: 376ea4f49a7de7551abd4c8e199050e903ade6e56339f1f78fcdf084083e4bea}
     showroom_content:
       repository: https://github.com/jkershawrh/agentic-ai-601
-      revision: 42026ad432fa4fdcdbe3b03834fc950bd339cf68
-      bundle_digest: sha256:5af99acae8370ab4482eb4ecebc9a6d888926c0678784ba68141342eb489d676
+      revision: a40f01396adcccdb93c240b8c5b5b45cf418c317
+      bundle_digest: sha256:d280124f951e4f454fc034c305093aeb32501e7a6e80970503af600c489145dd
   factory_evidence:
     development_journey: {path: evidence/factory-development-journey.json, sha256: bbd2f3941cdba0ed01141c64f23a9324a120db8fc0981e1f6a152b0824bafcf7}
     presentation_verification: {path: evidence/presentation-verification.json, sha256: 3f16b79e8a6e36b3124b078f52151f2518072d70544b12eefe0bc165cdbd27dd}
@@ -71,8 +71,8 @@ proposed_launchpad_intake:
     shared_blueprint: red-hat-intel-agentic-v1
     solution_family: agentic_ai
   sources:
-    showroom: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: 42026ad432fa4fdcdbe3b03834fc950bd339cf68, playbook: site.yml, start_path: showroom}
-    workload: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: 42026ad432fa4fdcdbe3b03834fc950bd339cf68, deploy_path: charts/agentic-ai-601}
+    showroom: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: a40f01396adcccdb93c240b8c5b5b45cf418c317, playbook: site.yml, start_path: showroom}
+    workload: {repo_url: "https://github.com/jkershawrh/agentic-ai-601", revision: a40f01396adcccdb93c240b8c5b5b45cf418c317, deploy_path: charts/agentic-ai-601}
   runtime:
     deployment_type: helm
     deployment_class: shared_namespace
