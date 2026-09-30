@@ -5,9 +5,44 @@
 This is a *REHEARSAL*, synthetic-only qualification lab. Production execution authority is disabled. The work cannot conclude that 601 is certified, orderable, or approved for external remediation.
 ====
 
+== Story
+
+Agentic AI 401 established that one workflow could be operated with visible
+evidence, deterministic policy, and human review. Agentic AI 501 then tested
+whether that contract remained intact through load, pressure, and recovery.
+The remaining question is deliberately narrower and more consequential: what
+evidence would a human require before allowing one bounded, reversible action?
+
+You are the authority reviewer. You will follow a synthetic condition from
+signal to decision, challenge a single-use approval, simulate one bounded
+action, force validation failure and rollback, and inspect the final evidence
+chain. The runtime can recommend; it cannot promote itself or reach an
+external target. In this candidate, production execution authority is disabled.
+
+== Show → Learn → Do → Prove
+
+* *Show:* use the presentation and qualification workspace to follow one
+  source-labeled governed loop.
+* *Learn:* separate signal, deterministic policy, approval, action,
+  independent validation, rollback, learning, and human promotion authority.
+* *Do:* execute the rehearsal API calls, challenge replay and emergency-stop
+  behavior, and verify the hash-linked evidence chain.
+* *Prove:* package immutable sources, bounded scope, zero unauthorized action,
+  disabled external authority, cleanup state, blockers, next owner, and human
+  disposition without claiming destination certification.
+
 You will construct and challenge one governed loop:
 
 `Signal → Decision → Action → Validate → Learn`
+
+== Runtime truth
+
+This candidate installs no optional OpenShift Operator and performs zero model
+inference. The OpenShift Console is an inspection surface, not an Operator
+claim. The signal, policy decision, approval, bounded action, validation,
+rollback, and evidence chain are deterministic rehearsal behavior. References
+to an LLM describe a possible advisory role only; no model endpoint, token use,
+or model identity is claimed by this lab.
 
 The action is an in-memory simulation scoped to `agentic-ai-601-lab-*`. No command in this lab mutates an OpenShift cluster, Launchpad, or a production workload.
 

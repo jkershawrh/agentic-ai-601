@@ -61,6 +61,20 @@ promotion remain explicit. A factory receipt cannot waive those gates.
 Verify that the cleanup statement accurately says no destination state was
 changed during this rehearsal journey.
 
+== Cleanup and Reclaim Boundary
+
+The qualification service keeps rehearsal approvals and hash-linked evidence
+in memory for the lifetime of the seat. The learner must not erase that
+in-memory evidence to make a second result look clean; preserve the final
+verification and handoff record for review.
+
+All actions in this lab are synthetic simulations. No external target or
+OpenShift workload is mutated by the governed loop, so participant cleanup is
+an evidence handoff rather than a cluster deletion. The namespace, routes,
+credentials, presentation, qualification service, and its in-memory state are
+owned by Launchpad reclaim. Independent destination certification must verify
+that reclaim removes the seat and reports zero residue.
+
 == Learner checkpoint
 
 Record the immutable revision, artifact digests, evidence package, unmet

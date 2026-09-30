@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -35,3 +37,29 @@ def test_standard_evidence_artifacts_are_present():
         "tests/benchmark_rubric.yaml",
     ):
         assert (ROOT / relative).is_file()
+
+
+def test_handoff_uses_canonical_launchpad_prerequisites_and_stays_fail_closed():
+    handoff = yaml.safe_load((ROOT / "handoff/launchpad-handoff.yaml").read_text())
+    authority = handoff["factory_receipt"]["authority"]
+    assert authority["orderable"] is False
+    assert authority["certified"] is False
+    assert authority["promotion_eligible"] is False
+
+    learning = handoff["proposed_launchpad_intake"]["learning"]
+    assert learning["prerequisites"] == [
+        "operate-agentic-blueprint",
+        "scale-agentic-blueprint",
+    ]
+    assert learning["branches_from"] == "scale-agentic-blueprint"
+
+
+def test_release_fails_closed_before_immutable_publication():
+    workflow = (ROOT / ".github/workflows/release.yml").read_text()
+    assert "python -m pytest -q tests/publication" in workflow
+    assert "Build Linux AMD64 candidate without publishing" in workflow
+    assert workflow.index("Reject HIGH or CRITICAL vulnerabilities") < workflow.index(
+        "Publish and verify exact immutable digest"
+    )
+    assert ":latest" not in workflow
+    assert "vulnerability-${{ matrix.name }}.json" in workflow

@@ -62,11 +62,11 @@ proposed_launchpad_intake:
     learning_level: "601"
     learning_stage: Qualify
     experience_type: system_qualification
-    prerequisites: [agentic-ai-401, agentic-ai-501]
+    prerequisites: [operate-agentic-blueprint, scale-agentic-blueprint]
     recommended_next_items: []
     journey_role: research_charter
     specialty_family: earned_authority
-    branches_from: agentic-ai-501
+    branches_from: scale-agentic-blueprint
     returns_to: null
     shared_blueprint: red-hat-intel-agentic-v1
     solution_family: agentic_ai

@@ -7,7 +7,7 @@ spec:
   repository: https://github.com/jkershawrh/agentic-ai-601
   revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
   learning_level: "601"
-  prerequisites: [agentic-ai-401, agentic-ai-501]
+  prerequisites: [operate-agentic-blueprint, scale-agentic-blueprint]
   prerequisite_state: incomplete
   source_classes:
     showroom: {playbook: site.yml, start_path: showroom}

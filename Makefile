@@ -2,7 +2,7 @@
 
 test:
 	npm run check
-	python3 -m pytest tests/publication/test_readme.py -q
+	python3 -m pytest tests/publication -q
 
 publication:
-	python3 -m pytest tests/publication/test_readme.py -q
+	python3 -m pytest tests/publication -q
