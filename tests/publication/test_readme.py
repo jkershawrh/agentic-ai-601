@@ -63,3 +63,13 @@ def test_release_fails_closed_before_immutable_publication():
     )
     assert ":latest" not in workflow
     assert "vulnerability-${{ matrix.name }}.json" in workflow
+
+
+def test_presentation_nginx_workers_are_bounded_for_large_clusters():
+    containerfile = (ROOT / "packaging/Containerfile").read_text()
+    config = (ROOT / "packaging/nginx-main.conf").read_text()
+
+    assert "COPY packaging/nginx-main.conf /etc/nginx/nginx.conf" in containerfile
+    assert "worker_processes 2;" in config
+    assert "worker_processes auto;" not in config
+    assert "pid /tmp/nginx.pid;" in config
