@@ -65,11 +65,12 @@ def test_release_fails_closed_before_immutable_publication():
     assert "vulnerability-${{ matrix.name }}.json" in workflow
 
 
-def test_presentation_nginx_workers_are_bounded_for_large_clusters():
+def test_presentation_runtime_has_no_os_package_surface():
     containerfile = (ROOT / "packaging/Containerfile").read_text()
-    config = (ROOT / "packaging/nginx-main.conf").read_text()
+    server = (ROOT / "packaging/static-server.go").read_text()
 
-    assert "COPY packaging/nginx-main.conf /etc/nginx/nginx.conf" in containerfile
-    assert "worker_processes 2;" in config
-    assert "worker_processes auto;" not in config
-    assert "pid /tmp/nginx.pid;" in config
+    assert "FROM scratch" in containerfile
+    assert 'ENTRYPOINT ["/static-server"]' in containerfile
+    assert "CGO_ENABLED=0" in containerfile
+    assert 'http.ListenAndServe(":8080", nil)' in server
+    assert 'http.HandleFunc("/healthz", textOK)' in server
