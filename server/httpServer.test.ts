@@ -24,6 +24,22 @@ describe('qualification service API', () => {
     expect(status).toMatchObject({ sourceState: 'rehearsal', executionAuthorityEnabled: false, scope: 'synthetic-lab-only' })
   })
 
+  it('renders a human-readable qualification operator without changing the JSON API', async () => {
+    const base = await start()
+    const response = await fetch(`${base}/api/v1/status/view`)
+    const page = await response.text()
+
+    expect(response.status).toBe(200)
+    expect(response.headers.get('content-type')).toContain('text/html')
+    expect(page).toContain('Qualification Evidence')
+    expect(page).toContain('REHEARSAL')
+    expect(page).toContain('Human review required')
+    expect(page).toContain('No production authority')
+
+    const status = await (await fetch(`${base}/api/v1/status`)).json()
+    expect(status).toMatchObject({ sourceState: 'rehearsal', executionAuthorityEnabled: false })
+  })
+
   it('accepts correlation and idempotency headers', async () => {
     const base = await start()
     const response = await fetch(`${base}/api/v1/loop/run`, {
